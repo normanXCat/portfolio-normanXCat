@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Pacifico, Source_Code_Pro, Pangolin } from "next/font/google";
 import "./globals.css";
+import { ScrollProgress } from "@/components/scroll-progress";
+import { IconNetwork } from "@tabler/icons-react";
 
 const pacifico = Pacifico({
   subsets: ["latin"],
@@ -43,7 +45,12 @@ export default function RootLayout({
       <body
         className={`${pacifico.variable} ${sourceCodePro.variable} ${pangolin.variable} antialiased`}
       >
-        <main className="max-w-2xl mx-auto px-6 py-12 md:py-24">
+        <ScrollProgress />
+        <div className="grid-background" aria-hidden="true" />
+        <div className="fixed top-[-10%] right-[-10%] opacity-[0.03] z-[-1] rotate-12 pointer-events-none" aria-hidden="true">
+          <IconNetwork size={600} stroke={1} />
+        </div>
+        <main className="max-w-2xl mx-auto px-6 py-12 md:py-24 relative z-10">
           {children}
         </main>
       </body>
