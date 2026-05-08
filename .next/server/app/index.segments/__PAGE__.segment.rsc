@@ -1,0 +1,12 @@
+1:"$Sreact.fragment"
+2:I[61564,["/_next/static/chunks/0dbhjjzl8qfwv.js","/_next/static/chunks/1051n.rah~zjp.js"],"Hero"]
+3:I[74423,["/_next/static/chunks/0dbhjjzl8qfwv.js","/_next/static/chunks/1051n.rah~zjp.js"],"About"]
+4:I[75998,["/_next/static/chunks/0dbhjjzl8qfwv.js","/_next/static/chunks/1051n.rah~zjp.js"],"Projects"]
+5:I[99774,["/_next/static/chunks/0dbhjjzl8qfwv.js","/_next/static/chunks/1051n.rah~zjp.js"],"Experience"]
+6:I[29514,["/_next/static/chunks/0dbhjjzl8qfwv.js","/_next/static/chunks/1051n.rah~zjp.js"],"Skills"]
+7:I[29978,["/_next/static/chunks/0dbhjjzl8qfwv.js","/_next/static/chunks/1051n.rah~zjp.js"],"Education"]
+8:I[50300,["/_next/static/chunks/0dbhjjzl8qfwv.js","/_next/static/chunks/1051n.rah~zjp.js"],"Contact"]
+9:I[97367,["/_next/static/chunks/0dbhjjzl8qfwv.js"],"OutletBoundary"]
+a:"$Sreact.suspense"
+0:{"rsc":["$","$1","c",{"children":[[["$","$L2",null,{}],["$","div",null,{"className":"h-px w-full bg-zinc-800/50 my-12 opacity-20"}],["$","$L3",null,{}],["$","div",null,{"className":"h-px w-full bg-zinc-800/50 my-12 opacity-20"}],["$","$L4",null,{}],["$","div",null,{"className":"h-px w-full bg-zinc-800/50 my-12 opacity-20"}],["$","$L5",null,{}],["$","div",null,{"className":"h-px w-full bg-zinc-800/50 my-12 opacity-20"}],["$","$L6",null,{}],["$","div",null,{"className":"h-px w-full bg-zinc-800/50 my-12 opacity-20"}],["$","$L7",null,{}],["$","div",null,{"className":"h-px w-full bg-zinc-800/50 my-12 opacity-20"}],["$","$L8",null,{}],["$","footer",null,{"className":"mt-24 pt-12 border-t border-zinc-900 flex flex-col md:flex-row justify-between gap-4 text-xs text-zinc-600 font-medium uppercase tracking-widest","children":[["$","span",null,{"children":"© 2025 Norman Vonizara"}],["$","span",null,{"children":"Antsiranana, Madagascar"}]]}]],[["$","script","script-0",{"src":"/_next/static/chunks/1051n.rah~zjp.js","async":true}]],["$","$L9",null,{"children":["$","$a",null,{"name":"Next.MetadataOutlet","children":"$@b"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"zoviAZ2iq18Q4niZPL6WC"}
+b:null
