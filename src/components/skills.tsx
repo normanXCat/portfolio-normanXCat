@@ -15,11 +15,27 @@ import {
 } from "@tabler/icons-react";
 
 const skills = [
-  { name: "Next.js", desc: "Framework principal, App Router", icon: IconBrandNextjs },
+  {
+    name: "Next.js",
+    desc: "Framework principal, App Router",
+    icon: IconBrandNextjs,
+  },
   { name: "React.js", desc: "UI composant-driven", icon: IconBrandReact },
-  { name: "TypeScript", desc: "JavaScript robuste et typé", icon: IconBrandTypescript },
-  { name: "Tailwind CSS", desc: "Styling rapide et cohérent", icon: IconBrandTailwind },
-  { name: "UI Components", desc: "Composants sur mesure et réutilisables", icon: IconComponents },
+  {
+    name: "TypeScript",
+    desc: "JavaScript robuste et typé",
+    icon: IconBrandTypescript,
+  },
+  {
+    name: "Tailwind CSS",
+    desc: "Styling rapide et cohérent",
+    icon: IconBrandTailwind,
+  },
+  {
+    name: "UI Components",
+    desc: "Composants sur mesure et réutilisables",
+    icon: IconComponents,
+  },
   { name: "Node.js", desc: "APIs REST backend", icon: IconBrandNodejs },
   { name: "MySQL", desc: "Base de données relationnelle", icon: IconDatabase },
   { name: "Python", desc: "Scripts et automatisation", icon: IconBrandPython },
@@ -51,7 +67,9 @@ export function Skills() {
               <skill.icon size={20} stroke={1.5} />
             </div>
             <div>
-              <h3 className="text-zinc-200 font-medium text-sm">{skill.name}</h3>
+              <h3 className="text-zinc-200 font-bold text-lg font-source-code">
+                {skill.name}
+              </h3>
               <p className="text-zinc-500 text-xs">{skill.desc}</p>
             </div>
           </motion.div>

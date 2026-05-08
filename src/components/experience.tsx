@@ -7,14 +7,16 @@ const experiences = [
     role: "Stage — Mada Digital",
     location: "Antananarivo",
     period: "2025 – présent",
-    description: "Développement front-end (SalonAtlas, Skolara), intégration de maquettes, déploiement.",
+    description:
+      "Développement front-end (SalonAtlas, Skolara), intégration de maquettes, déploiement.",
     link: "mada-digital.net",
   },
   {
     role: "Stage — Nisasarana SARLU",
     location: "Ivato Antananarivo",
     period: "11/2025 – 12/2025",
-    description: "Développement front-end, maintenance informatique, certification interne obtenue.",
+    description:
+      "Développement front-end, maintenance informatique, certification interne obtenue.",
   },
   {
     role: "Hackathon Redshalk",
@@ -52,8 +54,12 @@ export function Experience() {
           >
             <div className="absolute w-2 h-2 bg-zinc-600 rounded-full -left-[4.5px] top-2" />
             <div className="flex flex-col md:flex-row md:items-baseline justify-between gap-1 mb-2">
-              <h3 className="text-zinc-100 font-bold">{exp.role}</h3>
-              <span className="text-zinc-500 text-sm font-medium">{exp.period}</span>
+              <h3 className="text-zinc-100 font-bold font-source-code text-lg">
+                {exp.role}
+              </h3>
+              <span className="text-zinc-500 text-sm font-medium">
+                {exp.period}
+              </span>
             </div>
             <p className="text-zinc-400 text-sm mb-2">{exp.description}</p>
             {exp.link && (

@@ -44,11 +44,17 @@ export function Education() {
             className="flex flex-col gap-1"
           >
             <div className="flex justify-between items-baseline gap-4">
-              <h3 className="text-zinc-100 font-bold">{edu.degree}</h3>
-              <span className="text-zinc-500 text-sm whitespace-nowrap">{edu.period}</span>
+              <h3 className="text-zinc-100 font-bold text-lg font-source-code">
+                {edu.degree}
+              </h3>
+              <span className="text-zinc-500 text-sm whitespace-nowrap">
+                {edu.period}
+              </span>
             </div>
             <p className="text-zinc-400 text-sm">{edu.specialization}</p>
-            {edu.school && <p className="text-zinc-500 text-xs italic">{edu.school}</p>}
+            {edu.school && (
+              <p className="text-zinc-500 text-xs italic">{edu.school}</p>
+            )}
           </motion.div>
         ))}
       </div>

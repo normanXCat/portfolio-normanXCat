@@ -70,8 +70,9 @@
     --default-transition-timing-function: cubic-bezier(.4, 0, .2, 1);
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
-    --font-dm-sans: var(--font-dm-sans);
-    --font-dm-serif: var(--font-dm-serif);
+    --font-source-code: var(--font-source-code);
+    --font-pacifico: var(--font-pacifico);
+    --font-pixel: var(--font-vt323);
   }
 
   @supports (color: lab(0% 0 0)) {
@@ -334,6 +335,10 @@
     display: none !important;
   }
 
+  h1, h2, h3, h4 {
+    font-family: var(--font-pacifico);
+  }
+
   * {
     border-color: --border;
   }
@@ -368,6 +373,10 @@
 
   .my-12 {
     margin-block: calc(var(--spacing) * 12);
+  }
+
+  .my-20 {
+    margin-block: calc(var(--spacing) * 20);
   }
 
   .mt-2 {
@@ -414,7 +423,7 @@
     height: calc(var(--spacing) * 2);
   }
 
-  .h-px {
+  .h-\[1px\] {
     height: 1px;
   }
 
@@ -585,14 +594,8 @@
     background-color: var(--color-zinc-600);
   }
 
-  .bg-zinc-800\/50 {
-    background-color: #27272a80;
-  }
-
-  @supports (color: color-mix(in lab, red, red)) {
-    .bg-zinc-800\/50 {
-      background-color: color-mix(in oklab, var(--color-zinc-800) 50%, transparent);
-    }
+  .bg-zinc-800 {
+    background-color: var(--color-zinc-800);
   }
 
   .bg-zinc-900 {
@@ -651,6 +654,14 @@
 
   .pl-6 {
     padding-left: calc(var(--spacing) * 6);
+  }
+
+  .font-pixel {
+    font-family: var(--font-pixel);
+  }
+
+  .font-source-code {
+    font-family: var(--font-source-code);
   }
 
   .text-2xl {
@@ -900,11 +911,11 @@
 body {
   background-color: var(--background);
   color: var(--foreground);
-  font-family: var(--font-dm-sans);
+  font-family: var(--font-source-code);
 }
 
-h1, h2, h3, h4, .font-display {
-  font-family: var(--font-dm-serif);
+.font-pixel {
+  font-family: var(--font-vt323) !important;
 }
 
 @property --tw-space-y-reverse {

@@ -35,7 +35,7 @@ export function Contact() {
         </div>
       </div>
 
-      <h2 className="text-2xl font-bold mb-8 text-zinc-100 italic font-display">Get in touch</h2>
+      <h2 className="text-2xl font-bold mb-8 text-zinc-100 italic">Get in touch</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <a
           href="mailto:normanvonizara@gmail.com"
