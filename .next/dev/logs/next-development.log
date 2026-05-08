@@ -1,1 +1,33 @@
-{"timestamp":"00:00:00.961","source":"Server","level":"LOG","message":""}
+{"timestamp":"00:00:01.551","source":"Server","level":"LOG","message":""}
+{"timestamp":"00:00:19.785","source":"Server","level":"LOG","message":"✓ Compiled in 373ms"}
+{"timestamp":"00:02:01.186","source":"Server","level":"LOG","message":"✓ Compiled in 1613ms"}
+{"timestamp":"00:02:06.863","source":"Server","level":"LOG","message":"✓ Compiled in 219ms"}
+{"timestamp":"00:02:14.379","source":"Server","level":"LOG","message":"✓ Compiled in 65ms"}
+{"timestamp":"00:02:43.273","source":"Server","level":"LOG","message":"✓ Compiled in 45ms"}
+{"timestamp":"00:02:50.116","source":"Server","level":"LOG","message":"✓ Compiled in 275ms"}
+{"timestamp":"00:02:50.814","source":"Browser","level":"ERROR","message":"./src/components/hero.tsx:19:91\nExpected '</', got 'string literal'\n  17 | ...\n  18 | ...\n> 19 | ...-6xl font-bold tracking-tight <link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">\n     |                                                       ^^^^^^^^\n  20 | ...nts.gstatic.com\" crossorigin>\n  21 | ...m/css2?family=VT323&display=swap\" rel=\"stylesheet\">\n  22 | ...\n\nParsing ecmascript source code failed\n\nImport trace:\n  Server Component:\n    ./src/components/hero.tsx\n    ./src/app/page.tsx"}
+{"timestamp":"00:02:50.828","source":"Server","level":"ERROR","message":"[browser] \"./src/components/hero.tsx:19:91\\nExpected '</', got 'string literal'\\n  17 | ...\\n  18 | ...\\n> 19 | ...-6xl font-bold tracking-tight <link rel=\\\"preconnect\\\" href=\\\"https://fonts.googleapis.com\\\">\\n     |                                                       ^^^^^^^^\\n  20 | ...nts.gstatic.com\\\" crossorigin>\\n  21 | ...m/css2?family=VT323&display=swap\\\" rel=\\\"stylesheet\\\">\\n  22 | ...\\n\\nParsing ecmascript source code failed\\n\\nImport trace:\\n  Server Component:\\n    ./src/components/hero.tsx\\n    ./src/app/page.tsx\" \"\""}
+{"timestamp":"00:02:50.829","source":"Browser","level":"ERROR","message":"./src/components/hero.tsx:19:91\nExpected '</', got 'string literal'\n  17 | ...\n  18 | ...\n> 19 | ...-6xl font-bold tracking-tight <link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">\n     |                                                       ^^^^^^^^\n  20 | ...nts.gstatic.com\" crossorigin>\n  21 | ...m/css2?family=VT323&display=swap\" rel=\"stylesheet\">\n  22 | ...\n\nParsing ecmascript source code failed\n\nImport trace:\n  Server Component:\n    ./src/components/hero.tsx\n    ./src/app/page.tsx \"\""}
+{"timestamp":"00:02:51.830","source":"Browser","level":"ERROR","message":"./src/components/hero.tsx:19:91\nExpected '</', got 'string literal'\n  17 | ...\n  18 | ...\n> 19 | ...-6xl font-bold tracking-tight <link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">\n     |                                                       ^^^^^^^^\n  20 | ...nts.gstatic.com\" crossorigin>\n  21 | ...m/css2?family=VT323&display=swap\" rel=\"stylesheet\">\n  22 | ...\n\nParsing ecmascript source code failed\n\nImport trace:\n  Server Component:\n    ./src/components/hero.tsx\n    ./src/app/page.tsx"}
+{"timestamp":"00:02:51.831","source":"Server","level":"ERROR","message":"[browser] \"./src/components/hero.tsx:19:91\\nExpected '</', got 'string literal'\\n  17 | ...\\n  18 | ...\\n> 19 | ...-6xl font-bold tracking-tight <link rel=\\\"preconnect\\\" href=\\\"https://fonts.googleapis.com\\\">\\n     |                                                       ^^^^^^^^\\n  20 | ...nts.gstatic.com\\\" crossorigin>\\n  21 | ...m/css2?family=VT323&display=swap\\\" rel=\\\"stylesheet\\\">\\n  22 | ...\\n\\nParsing ecmascript source code failed\\n\\nImport trace:\\n  Server Component:\\n    ./src/components/hero.tsx\\n    ./src/app/page.tsx\" \"\""}
+{"timestamp":"00:02:51.831","source":"Browser","level":"ERROR","message":"./src/components/hero.tsx:19:91\nExpected '</', got 'string literal'\n  17 | ...\n  18 | ...\n> 19 | ...-6xl font-bold tracking-tight <link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">\n     |                                                       ^^^^^^^^\n  20 | ...nts.gstatic.com\" crossorigin>\n  21 | ...m/css2?family=VT323&display=swap\" rel=\"stylesheet\">\n  22 | ...\n\nParsing ecmascript source code failed\n\nImport trace:\n  Server Component:\n    ./src/components/hero.tsx\n    ./src/app/page.tsx \"\""}
+{"timestamp":"00:02:52.794","source":"Server","level":"LOG","message":"✓ Compiled in 33ms"}
+{"timestamp":"00:14:28.813","source":"Server","level":"LOG","message":"✓ Compiled in 89ms"}
+{"timestamp":"00:17:30.347","source":"Server","level":"LOG","message":"✓ Compiled in 136ms"}
+{"timestamp":"00:18:43.739","source":"Server","level":"LOG","message":"✓ Compiled in 57ms"}
+{"timestamp":"00:19:24.106","source":"Server","level":"LOG","message":"✓ Compiled in 85ms"}
+{"timestamp":"00:19:26.527","source":"Server","level":"LOG","message":"✓ Compiled in 35ms"}
+{"timestamp":"00:20:34.141","source":"Server","level":"LOG","message":"✓ Compiled in 149ms"}
+{"timestamp":"00:20:35.914","source":"Server","level":"LOG","message":"✓ Compiled in 31ms"}
+{"timestamp":"00:20:45.107","source":"Server","level":"LOG","message":"✓ Compiled in 83ms"}
+{"timestamp":"00:20:46.317","source":"Server","level":"LOG","message":"✓ Compiled in 109ms"}
+{"timestamp":"00:20:51.014","source":"Server","level":"LOG","message":"✓ Compiled in 28ms"}
+{"timestamp":"00:21:37.979","source":"Server","level":"LOG","message":"✓ Compiled in 51ms"}
+{"timestamp":"00:25:45.340","source":"Server","level":"LOG","message":"✓ Compiled in 1540ms"}
+{"timestamp":"00:25:52.038","source":"Server","level":"LOG","message":"✓ Compiled in 273ms"}
+{"timestamp":"00:25:58.167","source":"Server","level":"LOG","message":"✓ Compiled in 73ms"}
+{"timestamp":"00:26:34.187","source":"Server","level":"LOG","message":"✓ Compiled in 30ms"}
+{"timestamp":"00:27:18.199","source":"Server","level":"LOG","message":"✓ Compiled in 440ms"}
+{"timestamp":"00:27:26.673","source":"Server","level":"LOG","message":"✓ Compiled in 223ms"}
+{"timestamp":"00:27:44.758","source":"Server","level":"LOG","message":"✓ Compiled in 96ms"}
+{"timestamp":"00:27:46.578","source":"Server","level":"LOG","message":"✓ Compiled in 53ms"}

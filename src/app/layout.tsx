@@ -1,17 +1,23 @@
 import type { Metadata } from "next";
-import { DM_Serif_Display, DM_Sans } from "next/font/google";
+import { Pacifico, Source_Code_Pro, Pangolin } from "next/font/google";
 import "./globals.css";
 
-const dmSerif = DM_Serif_Display({
+const pacifico = Pacifico({
   subsets: ["latin"],
   weight: ["400"],
-  variable: "--font-dm-serif",
+  variable: "--font-pacifico",
 });
 
-const dmSans = DM_Sans({
+const sourceCodePro = Source_Code_Pro({
   subsets: ["latin"],
-  weight: ["400", "500", "700"],
-  variable: "--font-dm-sans",
+  weight: ["200", "400", "700", "900"],
+  variable: "--font-source-code",
+});
+
+const pangolin = Pangolin({
+  subsets: ["latin"],
+  weight: ["400"],
+  variable: "--font-pangolin",
 });
 
 export const metadata: Metadata = {
@@ -35,7 +41,7 @@ export default function RootLayout({
   return (
     <html lang="fr" className="dark">
       <body
-        className={`${dmSerif.variable} ${dmSans.variable} antialiased`}
+        className={`${pacifico.variable} ${sourceCodePro.variable} ${pangolin.variable} antialiased`}
       >
         <main className="max-w-2xl mx-auto px-6 py-12 md:py-24">
           {children}

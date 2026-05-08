@@ -6,17 +6,25 @@ import {
   IconMail,
 } from "@tabler/icons-react";
 import { motion } from "framer-motion";
+import { Pangolin } from "next/font/google";
+
+const pangolin = Pangolin({
+  subsets: ["latin"],
+  weight: ["400"],
+});
 
 export function Hero() {
   return (
-    <motion.section 
+    <motion.section
       initial={{ opacity: 0, y: 16 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
       className="flex flex-col gap-6 mb-16"
     >
       <div>
-        <h1 className="text-5xl md:text-6xl font-bold tracking-tight font-display text-white">
+        <h1
+          className={`${pangolin.className} text-5xl md:text-6xl font-bold tracking-tight text-white`}
+        >
           Norman Vonizara
         </h1>
         <p className="text-zinc-400 text-xl mt-2 font-medium">

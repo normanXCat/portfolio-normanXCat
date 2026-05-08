@@ -12,17 +12,17 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <Separator className="opacity-20" />
+      <Separator />
       <About />
-      <Separator className="opacity-20" />
+      <Separator />
       <Projects />
-      <Separator className="opacity-20" />
+      <Separator />
       <Experience />
-      <Separator className="opacity-20" />
+      <Separator />
       <Skills />
-      <Separator className="opacity-20" />
+      <Separator />
       <Education />
-      <Separator className="opacity-20" />
+      <Separator />
       <Contact />
       
       <footer className="mt-24 pt-12 border-t border-zinc-900 flex flex-col md:flex-row justify-between gap-4 text-xs text-zinc-600 font-medium uppercase tracking-widest">
