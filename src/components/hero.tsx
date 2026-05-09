@@ -6,11 +6,16 @@ import {
   IconMail,
 } from "@tabler/icons-react";
 import { motion } from "framer-motion";
-import { Pangolin } from "next/font/google";
+import { Pangolin, Advent_Pro } from "next/font/google";
 
 const pangolin = Pangolin({
   subsets: ["latin"],
   weight: ["400"],
+});
+
+const adventPro = Advent_Pro({
+  subsets: ["latin"],
+  weight: ["100", "400", "700", "900"],
 });
 
 export function Hero() {
@@ -23,7 +28,7 @@ export function Hero() {
     >
       <div>
         <h1
-          className={`${pangolin.className} text-5xl md:text-6xl font-bold tracking-tight text-foreground`}
+          className={`${adventPro.className} text-5xl md:text-6xl font-semibold tracking-tight text-foreground`}
         >
           Norman Vonizara
         </h1>

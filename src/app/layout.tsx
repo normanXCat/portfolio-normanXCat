@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Pacifico, Source_Code_Pro, Pangolin } from "next/font/google";
+import { Pacifico, Source_Code_Pro, Pangolin, Advent_Pro } from "next/font/google";
 import "./globals.css";
 import { ScrollProgress } from "@/components/scroll-progress";
 import { IconNetwork } from "@tabler/icons-react";
@@ -20,6 +20,12 @@ const pangolin = Pangolin({
   subsets: ["latin"],
   weight: ["400"],
   variable: "--font-pangolin",
+});
+
+const adventPro = Advent_Pro({
+  subsets: ["latin"],
+  weight: ["100", "400", "700", "900"],
+  variable: "--font-advent-pro",
 });
 
 export const metadata: Metadata = {
@@ -46,13 +52,12 @@ export default function RootLayout({
   return (
     <html lang="fr" suppressHydrationWarning>
       <body
-        className={`${pacifico.variable} ${sourceCodePro.variable} ${pangolin.variable} antialiased`}
+        className={`${pacifico.variable} ${sourceCodePro.variable} ${pangolin.variable} ${adventPro.variable} antialiased`}
       >
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
           enableSystem
-          disableTransitionOnChange
         >
           <ThemeToggle />
           <ScrollProgress />

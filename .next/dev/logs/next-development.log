@@ -1,40 +1,22 @@
-{"timestamp":"00:00:02.851","source":"Server","level":"LOG","message":""}
-{"timestamp":"00:00:13.037","source":"Server","level":"LOG","message":"✓ Compiled in 1271ms"}
-{"timestamp":"00:00:23.821","source":"Server","level":"LOG","message":"✓ Compiled in 180ms"}
-{"timestamp":"00:00:33.262","source":"Server","level":"LOG","message":"✓ Compiled in 116ms"}
-{"timestamp":"00:01:22.201","source":"Server","level":"LOG","message":"✓ Compiled in 218ms"}
-{"timestamp":"00:01:52.304","source":"Server","level":"LOG","message":"✓ Compiled in 83ms"}
-{"timestamp":"00:04:17.319","source":"Server","level":"LOG","message":"✓ Compiled in 297ms"}
-{"timestamp":"00:04:25.241","source":"Server","level":"ERROR","message":"⨯ ReferenceError: ThemeProvider is not defined"}
-{"timestamp":"00:04:25.388","source":"Server","level":"ERROR","message":"⨯ ReferenceError: ThemeProvider is not defined"}
-{"timestamp":"00:04:27.647","source":"Browser","level":"ERROR","message":"uncaughtError: ReferenceError: ThemeProvider is not defined"}
-{"timestamp":"00:04:27.664","source":"Server","level":"ERROR","message":"[browser] \"\\u001b[31mUncaught ReferenceError: ThemeProvider is not defined\\u001b[39m\\n\\u001b[31m    at RootLayout (src/app/layout.tsx:50:10)\\u001b[39m\\n  \\u001b[90m48 |\\u001b[0m         className={\\u001b[32m`\\u001b[0m${pacifico.variable\\u001b[32m} \\u001b[0m${sourceCodePro.variable\\u001b[32m} \\u001b[0m${pan...\\n  \\u001b[90m49 |\\u001b[0m       >\\n\\u001b[31m\\u001b[1m>\\u001b[0m \\u001b[90m50 |\\u001b[0m         <\\u001b[33mThemeProvider\\u001b[0m\\n  \\u001b[90m   |\\u001b[0m          \\u001b[31m\\u001b[1m^\\u001b[0m\\n  \\u001b[90m51 |\\u001b[0m           attribute=\\u001b[32m\\\"class\\\"\\u001b[0m\\n  \\u001b[90m52 |\\u001b[0m           defaultTheme=\\u001b[32m\\\"dark\\\"\\u001b[0m\\n  \\u001b[90m53 |\\u001b[0m           enableSystem\""}
-{"timestamp":"00:04:27.665","source":"Browser","level":"ERROR","message":"\u001b[31mUncaught ReferenceError: ThemeProvider is not defined\u001b[39m\n\u001b[31m    at RootLayout (src/app/layout.tsx:50:10)\u001b[39m\n  \u001b[90m48 |\u001b[0m         className={\u001b[32m`\u001b[0m${pacifico.variable\u001b[32m} \u001b[0m${sourceCodePro.variable\u001b[32m} \u001b[0m${pan...\n  \u001b[90m49 |\u001b[0m       >\n\u001b[31m\u001b[1m>\u001b[0m \u001b[90m50 |\u001b[0m         <\u001b[33mThemeProvider\u001b[0m\n  \u001b[90m   |\u001b[0m          \u001b[31m\u001b[1m^\u001b[0m\n  \u001b[90m51 |\u001b[0m           attribute=\u001b[32m\"class\"\u001b[0m\n  \u001b[90m52 |\u001b[0m           defaultTheme=\u001b[32m\"dark\"\u001b[0m\n  \u001b[90m53 |\u001b[0m           enableSystem"}
-{"timestamp":"00:04:39.942","source":"Server","level":"LOG","message":"✓ Compiled in 145ms"}
-{"timestamp":"00:04:55.173","source":"Server","level":"LOG","message":"✓ Compiled in 184ms"}
-{"timestamp":"00:05:07.596","source":"Server","level":"LOG","message":"✓ Compiled in 187ms"}
-{"timestamp":"00:05:23.447","source":"Server","level":"LOG","message":"✓ Compiled in 108ms"}
-{"timestamp":"00:05:38.328","source":"Server","level":"LOG","message":"✓ Compiled in 231ms"}
-{"timestamp":"00:05:54.984","source":"Server","level":"LOG","message":"✓ Compiled in 111ms"}
-{"timestamp":"00:06:10.163","source":"Server","level":"LOG","message":"✓ Compiled in 98ms"}
-{"timestamp":"00:06:24.587","source":"Server","level":"LOG","message":"✓ Compiled in 117ms"}
-{"timestamp":"00:06:49.638","source":"Server","level":"LOG","message":"✓ Compiled in 169ms"}
-{"timestamp":"00:06:58.192","source":"Server","level":"LOG","message":"✓ Compiled in 121ms"}
-{"timestamp":"00:09:26.738","source":"Server","level":"LOG","message":"✓ Compiled in 90ms"}
-{"timestamp":"00:09:33.620","source":"Server","level":"LOG","message":"✓ Compiled in 61ms"}
-{"timestamp":"00:09:46.907","source":"Server","level":"LOG","message":"✓ Compiled in 91ms"}
-{"timestamp":"00:12:37.641","source":"Server","level":"LOG","message":"✓ Compiled in 103ms"}
-{"timestamp":"00:12:46.189","source":"Server","level":"LOG","message":"✓ Compiled in 131ms"}
-{"timestamp":"00:13:31.571","source":"Server","level":"LOG","message":"✓ Compiled in 108ms"}
-{"timestamp":"00:13:44.325","source":"Server","level":"LOG","message":"✓ Compiled in 160ms"}
-{"timestamp":"00:16:01.688","source":"Server","level":"LOG","message":"✓ Compiled in 85ms"}
-{"timestamp":"00:16:23.483","source":"Server","level":"LOG","message":"✓ Compiled in 24ms"}
-{"timestamp":"00:17:01.891","source":"Server","level":"LOG","message":"✓ Compiled in 122ms"}
-{"timestamp":"00:17:10.954","source":"Server","level":"LOG","message":"✓ Compiled in 47ms"}
-{"timestamp":"00:17:35.308","source":"Server","level":"LOG","message":"✓ Compiled in 97ms"}
-{"timestamp":"00:18:18.263","source":"Server","level":"LOG","message":"✓ Compiled in 80ms"}
-{"timestamp":"00:18:42.328","source":"Server","level":"LOG","message":"✓ Compiled in 85ms"}
-{"timestamp":"00:18:44.878","source":"Server","level":"LOG","message":"✓ Compiled in 75ms"}
-{"timestamp":"00:19:38.208","source":"Server","level":"LOG","message":"✓ Compiled in 84ms"}
-{"timestamp":"00:19:46.704","source":"Server","level":"LOG","message":"✓ Compiled in 132ms"}
-{"timestamp":"00:20:12.866","source":"Server","level":"LOG","message":"✓ Compiled in 88ms"}
+{"timestamp":"00:00:01.515","source":"Server","level":"LOG","message":""}
+{"timestamp":"00:01:27.453","source":"Server","level":"LOG","message":"✓ Compiled in 190ms"}
+{"timestamp":"00:03:05.382","source":"Server","level":"LOG","message":"✓ Compiled in 161ms"}
+{"timestamp":"00:03:11.773","source":"Server","level":"LOG","message":"✓ Compiled in 256ms"}
+{"timestamp":"00:03:18.901","source":"Server","level":"LOG","message":"✓ Compiled in 145ms"}
+{"timestamp":"00:06:22.644","source":"Server","level":"LOG","message":"✓ Compiled in 2000ms"}
+{"timestamp":"00:06:27.334","source":"Server","level":"LOG","message":"✓ Compiled in 333ms"}
+{"timestamp":"00:06:35.040","source":"Server","level":"LOG","message":"✓ Compiled in 1648ms"}
+{"timestamp":"00:10:28.160","source":"Server","level":"LOG","message":"✓ Compiled in 197ms"}
+{"timestamp":"00:10:47.230","source":"Server","level":"LOG","message":"✓ Compiled in 30ms"}
+{"timestamp":"00:11:17.712","source":"Server","level":"LOG","message":"✓ Compiled in 230ms"}
+{"timestamp":"00:12:26.045","source":"Server","level":"LOG","message":"✓ Compiled in 151ms"}
+{"timestamp":"00:12:28.884","source":"Server","level":"LOG","message":"✓ Compiled in 91ms"}
+{"timestamp":"00:12:42.460","source":"Server","level":"LOG","message":"✓ Compiled in 208ms"}
+{"timestamp":"00:13:05.672","source":"Server","level":"LOG","message":"✓ Compiled in 80ms"}
+{"timestamp":"00:14:00.964","source":"Server","level":"LOG","message":"✓ Compiled in 170ms"}
+{"timestamp":"00:16:17.616","source":"Server","level":"LOG","message":"✓ Compiled in 216ms"}
+{"timestamp":"00:17:21.658","source":"Server","level":"LOG","message":"✓ Compiled in 585ms"}
+{"timestamp":"00:20:14.302","source":"Browser","level":"INFO","message":"%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"}
+{"timestamp":"00:21:26.393","source":"Server","level":"LOG","message":"✓ Compiled in 533ms"}
+{"timestamp":"00:23:45.821","source":"Browser","level":"INFO","message":"%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"}
+{"timestamp":"00:23:50.250","source":"Browser","level":"INFO","message":"%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"}
