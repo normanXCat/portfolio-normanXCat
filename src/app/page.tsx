@@ -1,3 +1,5 @@
+import { promises as fs } from "fs";
+import path from "path";
 import { Hero } from "@/components/hero";
 import { About } from "@/components/about";
 import { Projects } from "@/components/projects";
@@ -7,25 +9,28 @@ import { Education } from "@/components/education";
 import { Contact } from "@/components/contact";
 import { Separator } from "@/components/separator";
 
+export default async function Home() {
+  const filePath = path.join(process.cwd(), "public", "data.json");
+  const fileContents = await fs.readFile(filePath, "utf8");
+  const data = JSON.parse(fileContents);
 
-export default function Home() {
   return (
     <>
-      <Hero />
+      <Hero data={data.hero} />
       <Separator />
-      <About />
+      <About data={data.about} />
       <Separator />
-      <Projects />
+      <Projects data={data.projects} />
       <Separator />
-      <Experience />
+      <Experience data={data.experience} />
       <Separator />
-      <Skills />
+      <Skills data={data.skills} />
       <Separator />
-      <Education />
+      <Education data={data.education} />
       <Separator />
-      <Contact />
+      <Contact data={data.contact} />
       
-      <footer className="mt-24 pt-12 border-t border-zinc-900 flex flex-col md:flex-row justify-between gap-4 text-xs text-zinc-600 font-medium uppercase tracking-widest">
+      <footer className="mt-24 pt-12 border-t border-border flex flex-col md:flex-row justify-between gap-4 text-xs text-muted font-medium uppercase tracking-widest">
         <span>© 2025 Norman Vonizara</span>
         <span>Antsiranana, Madagascar</span>
       </footer>

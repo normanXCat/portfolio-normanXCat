@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Pacifico, Source_Code_Pro, Pangolin } from "next/font/google";
+import { Pacifico, Source_Code_Pro, Pangolin, Advent_Pro } from "next/font/google";
 import "./globals.css";
 import { ScrollProgress } from "@/components/scroll-progress";
 import { IconNetwork } from "@tabler/icons-react";
@@ -22,6 +22,12 @@ const pangolin = Pangolin({
   variable: "--font-pangolin",
 });
 
+const adventPro = Advent_Pro({
+  subsets: ["latin"],
+  weight: ["100", "400", "700", "900"],
+  variable: "--font-advent-pro",
+});
+
 export const metadata: Metadata = {
   title: "Norman Vonizara — Développeur Full-Stack",
   description:
@@ -35,24 +41,32 @@ export const metadata: Metadata = {
   },
 };
 
+import { ThemeProvider } from "@/components/theme-provider";
+import { ThemeToggle } from "@/components/theme-toggle";
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr" className="dark">
+    <html lang="fr" suppressHydrationWarning>
       <body
-        className={`${pacifico.variable} ${sourceCodePro.variable} ${pangolin.variable} antialiased`}
+        className={`${pacifico.variable} ${sourceCodePro.variable} ${pangolin.variable} ${adventPro.variable} antialiased`}
       >
-        <ScrollProgress />
-        <div className="grid-background" aria-hidden="true" />
-        <div className="fixed top-[-10%] right-[-10%] opacity-[0.03] z-[-1] rotate-12 pointer-events-none" aria-hidden="true">
-          <IconNetwork size={600} stroke={1} />
-        </div>
-        <main className="max-w-2xl mx-auto px-6 py-12 md:py-24 relative z-10">
-          {children}
-        </main>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem
+        >
+          <ThemeToggle />
+          <ScrollProgress />
+          <div className="grid-background" aria-hidden="true" />
+
+          <main className="max-w-2xl mx-auto px-6 py-12 md:py-24 relative z-10">
+            {children}
+          </main>
+        </ThemeProvider>
       </body>
     </html>
   );
