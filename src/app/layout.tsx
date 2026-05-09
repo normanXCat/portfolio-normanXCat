@@ -29,15 +29,48 @@ const adventPro = Advent_Pro({
 });
 
 export const metadata: Metadata = {
-  title: "Norman Vonizara — Développeur Full-Stack",
+  title: "Norman Vonizara | Développeur Full-Stack & Télécommunications",
   description:
-    "Portfolio de Norman Vonizara, développeur full-stack frontend spécialisé Next.js, React et TypeScript.",
+    "Portfolio de Norman Vonizara. Expertises en Développement Web & Mobile, Télécommunications, Réseaux, DevOps, Machine Learning et systèmes embarqués (Arduino).",
+  keywords: [
+    "Norman Vonizara",
+    "Développeur Full-Stack",
+    "Frontend",
+    "Next.js",
+    "React",
+    "Télécommunications",
+    "Réseaux",
+    "DevOps",
+    "Machine Learning",
+    "Arduino",
+    "Madagascar",
+    "Antsiranana"
+  ],
+  authors: [{ name: "Norman Vonizara" }],
+  creator: "Norman Vonizara",
   openGraph: {
     title: "Norman Vonizara — Développeur Full-Stack",
-    description: "Portfolio de Norman Vonizara.",
+    description:
+      "Découvrez mes projets et compétences en développement Web/Mobile, Télécommunications, DevOps et Machine Learning.",
     url: "https://normanvonizara.dev",
+    siteName: "Portfolio Norman Vonizara",
+    images: [
+      {
+        url: "/profil.norman.jpg",
+        width: 800,
+        height: 800,
+        alt: "Photo de profil de Norman Vonizara",
+      },
+    ],
     locale: "fr_FR",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Norman Vonizara — Développeur Full-Stack",
+    description:
+      "Découvrez mes projets et compétences en développement Web/Mobile, Télécommunications, DevOps et Machine Learning.",
+    images: ["/profil.norman.jpg"],
   },
 };
 

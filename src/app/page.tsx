@@ -29,10 +29,10 @@ export default async function Home() {
       <Education data={data.education} />
       <Separator />
       <Contact data={data.contact} />
-      
+
       <footer className="mt-24 pt-12 border-t border-border flex flex-col md:flex-row justify-between gap-4 text-xs text-muted font-medium uppercase tracking-widest">
-        <span>© 2025 Norman Vonizara</span>
-        <span>Antsiranana, Madagascar</span>
+        <span>© {new Date().getFullYear()} Norman Vonizara</span>
+        <span>B.P 201, Antsiranana, Madagascar</span>
       </footer>
     </>
   );
