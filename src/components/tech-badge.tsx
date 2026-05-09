@@ -11,6 +11,8 @@ import {
   IconBrandPrisma,
   IconBrandVite,
   IconBrandMysql,
+  IconBrandDocker,
+  IconBrain,
 } from "@tabler/icons-react";
 
 const techIcons: Record<string, React.ElementType> = {
@@ -26,6 +28,8 @@ const techIcons: Record<string, React.ElementType> = {
   "API REST": IconApi,
   Laravel: IconBrandLaravel,
   Prisma: IconBrandPrisma,
+  Docker: IconBrandDocker,
+  "Machine Learning": IconBrain,
 };
 
 interface TechBadgeProps {

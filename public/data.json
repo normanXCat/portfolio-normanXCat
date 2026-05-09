@@ -2,12 +2,12 @@
   "hero": {
     "name": "Norman Vonizara",
     "title": "Développeur Full-Stack · Frontend Focused",
-    "bio": "Passionné par les interfaces utilisateurs, l'électronique embarquée et les réseaux. Actuellement en stage chez",
+    "bio": "Alliant une expertise en développement Web & Mobile à une solide formation en Télécommunications et Réseaux. J'intègre également le DevOps, le Machine Learning et l'embarqué (Arduino) dans mes projets. Actuellement en stage chez",
     "currentCompany": {
       "name": "Mada Digital",
       "url": "https://www.mada-digital.net"
     },
-    "location": "Antsiranana, Madagascar · Disponible pour un stage",
+    "location": "Antsiranana, Madagascar",
     "links": {
       "github": "https://github.com/normanXCat",
       "linkedin": "https://linkedin.com/in/norman-vonizara-07b96b36a/",
@@ -15,7 +15,7 @@
     }
   },
   "about": [
-    "Actuellement en stage chez **Mada Digital** (Antananarivo) — développement de SalonAtlas et Skolara",
+    "Actuellement en stage chez **Mada Digital** (Antsiranana) — développement de SalonAtlas et Skolara",
     "Développé et déployé **SalonAtlas** — annuaire de salons de coiffure à Madagascar",
     "Développé **Skolara** — plateforme éducative scolaire et préscolaire (Next.js, blog, pré-inscription)",
     "**2ème place au Hackathon Redshalk 2025** — prototype plateforme tourisme, rôle front-end principal",
@@ -85,20 +85,14 @@
     {
       "name": "MeetSpace",
       "url": "#",
-      "description": "Prototype de réservation de salles — gestion événements, disponibilité. MVP 48h.",
-      "stack": ["React", "Node.js", "Express Js"]
+      "description": "Projet réalisé lors du Hackathon Redshalk (2ème place). Prototype MVP développé en 48h.",
+      "stack": ["React", "Tailwind CSS", "Node.js", "Express Js"]
     },
     {
       "name": "CV Builder",
       "url": "#",
       "description": "App web de création et export de CV en PDF. Formulaires validés, composants réutilisables.",
       "stack": ["React", "TypeScript", "Tailwind CSS"]
-    },
-    {
-      "name": "Hackathon Redshalk",
-      "url": "#",
-      "description": "Plateforme de découverte touristique (2ème place). Prototype front-end 48h.",
-      "stack": ["React", "Tailwind CSS", "Express Js"]
     }
   ],
   "skills": [
@@ -151,6 +145,16 @@
       "name": "UML / Merise",
       "desc": "Modélisation applicative",
       "icon": "IconSchema"
+    },
+    {
+      "name": "Docker",
+      "desc": "Conteneurisation d'applications",
+      "icon": "IconBrandDocker"
+    },
+    {
+      "name": "Machine Learning",
+      "desc": "Analyse de données et IA",
+      "icon": "IconBrain"
     }
   ],
   "education": [

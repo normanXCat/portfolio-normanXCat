@@ -12,6 +12,8 @@ import {
   IconCpu,
   IconSchema,
   IconComponents,
+  IconBrandDocker,
+  IconBrain,
 } from "@tabler/icons-react";
 import React from "react";
 
@@ -26,6 +28,8 @@ const iconMap: Record<string, React.ElementType> = {
   IconCpu,
   IconSchema,
   IconComponents,
+  IconBrandDocker,
+  IconBrain,
 };
 
 type SkillData = {
