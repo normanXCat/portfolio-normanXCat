@@ -25,7 +25,7 @@ export default function Home() {
       <Separator />
       <Contact />
       
-      <footer className="mt-24 pt-12 border-t border-zinc-900 flex flex-col md:flex-row justify-between gap-4 text-xs text-zinc-600 font-medium uppercase tracking-widest">
+      <footer className="mt-24 pt-12 border-t border-border flex flex-col md:flex-row justify-between gap-4 text-xs text-muted font-medium uppercase tracking-widest">
         <span>© 2025 Norman Vonizara</span>
         <span>Antsiranana, Madagascar</span>
       </footer>

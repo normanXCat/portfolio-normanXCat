@@ -21,7 +21,7 @@ export function About() {
       transition={{ duration: 0.5, delay: 0.1 }}
       className="mb-16"
     >
-      <h2 className="text-2xl font-bold mb-6 text-zinc-100">Ce que j&apos;ai fait</h2>
+      <h2 className="text-2xl font-bold mb-6 text-foreground">Ce que j&apos;ai fait</h2>
       <ul className="space-y-4">
         {experiences.map((exp, index) => (
           <motion.li
@@ -30,9 +30,9 @@ export function About() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.3, delay: 0.2 + index * 0.05 }}
-            className="text-zinc-400 leading-relaxed list-disc list-inside marker:text-zinc-600"
+            className="text-muted leading-relaxed list-disc list-inside marker:text-muted"
             dangerouslySetInnerHTML={{
-              __html: exp.replace(/\*\*(.*?)\*\*/g, '<span class="text-zinc-200 font-medium">$1</span>'),
+              __html: exp.replace(/\*\*(.*?)\*\*/g, '<span class="text-foreground font-semibold">$1</span>'),
             }}
           />
         ))}

@@ -32,7 +32,7 @@ export function Education() {
       transition={{ duration: 0.5, delay: 0.5 }}
       className="mb-16"
     >
-      <h2 className="text-2xl font-bold mb-8 text-zinc-100">Formation</h2>
+      <h2 className="text-2xl font-bold mb-8 text-foreground">Formation</h2>
       <div className="space-y-8">
         {education.map((edu, index) => (
           <motion.div
@@ -44,16 +44,16 @@ export function Education() {
             className="flex flex-col gap-1"
           >
             <div className="flex justify-between items-baseline gap-4">
-              <h3 className="text-zinc-100 font-bold text-lg font-source-code">
+              <h3 className="text-foreground font-bold text-lg font-source-code">
                 {edu.degree}
               </h3>
-              <span className="text-zinc-500 text-sm whitespace-nowrap">
+              <span className="text-muted text-sm whitespace-nowrap">
                 {edu.period}
               </span>
             </div>
-            <p className="text-zinc-400 text-sm">{edu.specialization}</p>
+            <p className="text-muted text-sm">{edu.specialization}</p>
             {edu.school && (
-              <p className="text-zinc-500 text-xs italic">{edu.school}</p>
+              <p className="text-muted text-xs italic">{edu.school}</p>
             )}
           </motion.div>
         ))}

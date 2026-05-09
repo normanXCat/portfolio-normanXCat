@@ -35,24 +35,33 @@ export const metadata: Metadata = {
   },
 };
 
+import { ThemeProvider } from "@/components/theme-provider";
+import { ThemeToggle } from "@/components/theme-toggle";
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr" className="dark">
+    <html lang="fr" suppressHydrationWarning>
       <body
         className={`${pacifico.variable} ${sourceCodePro.variable} ${pangolin.variable} antialiased`}
       >
-        <ScrollProgress />
-        <div className="grid-background" aria-hidden="true" />
-        <div className="fixed top-[-10%] right-[-10%] opacity-[0.03] z-[-1] rotate-12 pointer-events-none" aria-hidden="true">
-          <IconNetwork size={600} stroke={1} />
-        </div>
-        <main className="max-w-2xl mx-auto px-6 py-12 md:py-24 relative z-10">
-          {children}
-        </main>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <ThemeToggle />
+          <ScrollProgress />
+          <div className="grid-background" aria-hidden="true" />
+
+          <main className="max-w-2xl mx-auto px-6 py-12 md:py-24 relative z-10">
+            {children}
+          </main>
+        </ThemeProvider>
       </body>
     </html>
   );

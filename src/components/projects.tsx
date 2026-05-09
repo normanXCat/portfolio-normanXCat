@@ -52,7 +52,7 @@ export function Projects() {
       transition={{ duration: 0.5, delay: 0.2 }}
       className="mb-16"
     >
-      <h2 className="text-2xl font-bold mb-8 text-zinc-100">Projets</h2>
+      <h2 className="text-2xl font-bold mb-8 text-foreground">Projets</h2>
       <div className="grid gap-8">
         {projects.map((project, index) => (
           <motion.div
@@ -68,15 +68,15 @@ export function Projects() {
                 href={project.url}
                 target={project.url !== "#" ? "_blank" : undefined}
                 rel={project.url !== "#" ? "noopener noreferrer" : undefined}
-                className="text-lg font-bold text-zinc-100 hover:text-white transition-colors flex items-center gap-1.5"
+                className="text-lg font-bold text-foreground hover:opacity-80 transition-opacity flex items-center gap-1.5"
               >
                 {project.name}
                 {project.url !== "#" && (
-                  <IconExternalLink size={16} className="text-zinc-500 group-hover:text-zinc-300 transition-colors" />
+                  <IconExternalLink size={16} className="text-muted group-hover:text-foreground transition-colors" />
                 )}
               </a>
             </div>
-            <p className="text-zinc-400 text-sm leading-relaxed">
+            <p className="text-muted text-sm leading-relaxed">
               {project.description}
             </p>
             <div className="flex flex-wrap gap-2">
