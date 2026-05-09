@@ -1,0 +1,184 @@
+{
+  "hero": {
+    "name": "Norman Vonizara",
+    "title": "Développeur Full-Stack · Frontend Focused",
+    "bio": "Passionné par les interfaces utilisateurs, l'électronique embarquée et les réseaux. Actuellement en stage chez",
+    "currentCompany": {
+      "name": "Mada Digital",
+      "url": "https://www.mada-digital.net"
+    },
+    "location": "Antsiranana, Madagascar · Disponible pour un stage",
+    "links": {
+      "github": "https://github.com/normanXCat",
+      "linkedin": "https://linkedin.com/in/norman-vonizara-07b96b36a/",
+      "email": "normanvonizara@gmail.com"
+    }
+  },
+  "about": [
+    "Actuellement en stage chez **Mada Digital** (Antananarivo) — développement de SalonAtlas et Skolara",
+    "Développé et déployé **SalonAtlas** — annuaire de salons de coiffure à Madagascar",
+    "Développé **Skolara** — plateforme éducative scolaire et préscolaire (Next.js, blog, pré-inscription)",
+    "**2ème place au Hackathon Redshalk 2025** — prototype plateforme tourisme, rôle front-end principal",
+    "Stage **Nisasarana SARLU** (Antananarivo) — développement front-end, certifié en interne",
+    "Atelier **Arduino INNOVA-DAYS** — programmation embarquée C/C++",
+    "Étudiant en **Master 1 Mention STIC**, parcours Télécommunications et Réseaux, ESP Antsiranana"
+  ],
+  "experience": [
+    {
+      "role": "Stage — Mada Digital",
+      "location": "Antananarivo",
+      "period": "2025 – présent",
+      "description": "Développement front-end (SalonAtlas, Skolara), intégration de maquettes, déploiement.",
+      "link": "mada-digital.net"
+    },
+    {
+      "role": "Stage — Nisasarana SARLU",
+      "location": "Ivato Antananarivo",
+      "period": "11/2025 – 12/2025",
+      "description": "Développement front-end, maintenance informatique, certification interne obtenue."
+    },
+    {
+      "role": "Hackathon Redshalk",
+      "location": "Antsiranana",
+      "period": "08/2025",
+      "description": "Développeur front-end principal. 2ème place."
+    },
+    {
+      "role": "Atelier Arduino INNOVA-DAYS",
+      "location": "ESP",
+      "period": "03/2025",
+      "description": "Programmation embarquée Arduino C/C++."
+    }
+  ],
+  "projects": [
+    {
+      "name": "SalonAtlas",
+      "url": "https://salon-atlas.mada-digital.xyz/",
+      "description": "Annuaire des salons de coiffure à Madagascar. Réalisé chez Mada Digital.",
+      "stack": [
+        "React + Vite",
+        "TypeScript",
+        "Tailwind CSS",
+        "Laravel",
+        "PostgreSQL"
+      ]
+    },
+    {
+      "name": "Skolara",
+      "url": "https://skolara.vercel.app/",
+      "description": "Plateforme éducative scolaire & préscolaire : calendrier, actualités, pré-inscription, blog.",
+      "stack": [
+        "Next.js",
+        "TypeScript",
+        "Tailwind CSS",
+        "Express Js",
+        "Prisma",
+        "PostgreSQL"
+      ]
+    },
+    {
+      "name": "DocuLink",
+      "url": "#",
+      "description": "Bibliothèque virtuelle pour consulter et gérer livres, mémoires et thèses.",
+      "stack": ["Next.js", "Node.js", "MySQL", "API REST", "Express Js"]
+    },
+    {
+      "name": "MeetSpace",
+      "url": "#",
+      "description": "Prototype de réservation de salles — gestion événements, disponibilité. MVP 48h.",
+      "stack": ["React", "Node.js", "Express Js"]
+    },
+    {
+      "name": "CV Builder",
+      "url": "#",
+      "description": "App web de création et export de CV en PDF. Formulaires validés, composants réutilisables.",
+      "stack": ["React", "TypeScript", "Tailwind CSS"]
+    },
+    {
+      "name": "Hackathon Redshalk",
+      "url": "#",
+      "description": "Plateforme de découverte touristique (2ème place). Prototype front-end 48h.",
+      "stack": ["React", "Tailwind CSS", "Express Js"]
+    }
+  ],
+  "skills": [
+    {
+      "name": "Next.js",
+      "desc": "Framework principal, App Router",
+      "icon": "IconBrandNextjs"
+    },
+    {
+      "name": "React.js",
+      "desc": "UI composant-driven",
+      "icon": "IconBrandReact"
+    },
+    {
+      "name": "TypeScript",
+      "desc": "JavaScript robuste et typé",
+      "icon": "IconBrandTypescript"
+    },
+    {
+      "name": "Tailwind CSS",
+      "desc": "Styling rapide et cohérent",
+      "icon": "IconBrandTailwind"
+    },
+    {
+      "name": "UI Components",
+      "desc": "Composants sur mesure et réutilisables",
+      "icon": "IconComponents"
+    },
+    {
+      "name": "Node.js",
+      "desc": "APIs REST backend",
+      "icon": "IconBrandNodejs"
+    },
+    {
+      "name": "MySQL",
+      "desc": "Base de données relationnelle",
+      "icon": "IconDatabase"
+    },
+    {
+      "name": "Python",
+      "desc": "Scripts et automatisation",
+      "icon": "IconBrandPython"
+    },
+    {
+      "name": "Arduino C/C++",
+      "desc": "Électronique embarquée",
+      "icon": "IconCpu"
+    },
+    {
+      "name": "UML / Merise",
+      "desc": "Modélisation applicative",
+      "icon": "IconSchema"
+    }
+  ],
+  "education": [
+    {
+      "degree": "Master 1 — Mention STIC",
+      "period": "2025 – en cours",
+      "specialization": "Parcours : Télécommunications et Réseaux",
+      "school": "Ecole Supérieure Polytechnique, Antsiranana"
+    },
+    {
+      "degree": "Licence — Génie Électrique et Technologie",
+      "period": "2022 – 2025",
+      "specialization": "Parcours : Electronique Informatique et Technologie",
+      "school": "Ecole Supérieure Polytechnique, Antsiranana"
+    },
+    {
+      "degree": "Baccalauréat Série D",
+      "period": "2020",
+      "specialization": "Collège Saint Joseph, Fianarantsoa",
+      "school": ""
+    }
+  ],
+  "contact": {
+    "languages": [
+      { "flag": "🇲🇬", "name": "Malagasy", "level": "Natif" },
+      { "flag": "🇫🇷", "name": "Français", "level": "Courant" },
+      { "flag": "🇬🇧", "name": "Anglais", "level": "Intermédiaire" }
+    ],
+    "phone": "+261 34 30 638 17"
+  }
+}

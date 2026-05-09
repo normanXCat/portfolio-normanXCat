@@ -2,28 +2,14 @@
 
 import { motion } from "framer-motion";
 
-const education = [
-  {
-    degree: "Master 1 — Mention STIC",
-    period: "2025 – en cours",
-    specialization: "Parcours : Télécommunications et Réseaux",
-    school: "Ecole Supérieure Polytechnique, Antsiranana",
-  },
-  {
-    degree: "Licence — Génie Électrique et Technologie",
-    period: "2022 – 2025",
-    specialization: "Parcours : Electronique Informatique et Technologie",
-    school: "Ecole Supérieure Polytechnique, Antsiranana",
-  },
-  {
-    degree: "Baccalauréat Série D",
-    period: "2020",
-    specialization: "Collège Saint Joseph, Fianarantsoa",
-    school: "",
-  },
-];
+type EducationData = {
+  degree: string;
+  period: string;
+  specialization: string;
+  school: string;
+};
 
-export function Education() {
+export function Education({ data }: { data: EducationData[] }) {
   return (
     <motion.section
       initial={{ opacity: 0, y: 16 }}
@@ -34,7 +20,7 @@ export function Education() {
     >
       <h2 className="text-2xl font-bold mb-8 text-foreground">Formation</h2>
       <div className="space-y-8">
-        {education.map((edu, index) => (
+        {data.map((edu, index) => (
           <motion.div
             key={index}
             initial={{ opacity: 0, x: -8 }}

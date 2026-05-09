@@ -2,17 +2,7 @@
 
 import { motion } from "framer-motion";
 
-const experiences = [
-  "Actuellement en stage chez **Mada Digital** (Antananarivo) — développement de SalonAtlas et Skolara",
-  "Développé et déployé **SalonAtlas** — annuaire de salons de coiffure à Madagascar",
-  "Développé **Skolara** — plateforme éducative scolaire et préscolaire (Next.js, blog, pré-inscription)",
-  "**2ème place au Hackathon Redshalk 2025** — prototype plateforme tourisme, rôle front-end principal",
-  "Stage **Nisasarana SARLU** (Antananarivo) — développement front-end, certifié en interne",
-  "Atelier **Arduino INNOVA-DAYS** — programmation embarquée C/C++",
-  "Étudiant en **Master 1 Mention STIC**, parcours Télécommunications et Réseaux, ESP Antsiranana",
-];
-
-export function About() {
+export function About({ data }: { data: string[] }) {
   return (
     <motion.section
       initial={{ opacity: 0, y: 16 }}
@@ -23,7 +13,7 @@ export function About() {
     >
       <h2 className="text-2xl font-bold mb-6 text-foreground">Ce que j&apos;ai fait</h2>
       <ul className="space-y-4">
-        {experiences.map((exp, index) => (
+        {data.map((exp, index) => (
           <motion.li
             key={index}
             initial={{ opacity: 0, x: -8 }}

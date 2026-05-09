@@ -2,37 +2,15 @@
 
 import { motion } from "framer-motion";
 
-const experiences = [
-  {
-    role: "Stage — Mada Digital",
-    location: "Antananarivo",
-    period: "2025 – présent",
-    description:
-      "Développement front-end (SalonAtlas, Skolara), intégration de maquettes, déploiement.",
-    link: "mada-digital.net",
-  },
-  {
-    role: "Stage — Nisasarana SARLU",
-    location: "Ivato Antananarivo",
-    period: "11/2025 – 12/2025",
-    description:
-      "Développement front-end, maintenance informatique, certification interne obtenue.",
-  },
-  {
-    role: "Hackathon Redshalk",
-    location: "Antsiranana",
-    period: "08/2025",
-    description: "Développeur front-end principal. 2ème place.",
-  },
-  {
-    role: "Atelier Arduino INNOVA-DAYS",
-    location: "ESP",
-    period: "03/2025",
-    description: "Programmation embarquée Arduino C/C++.",
-  },
-];
+type ExperienceData = {
+  role: string;
+  location: string;
+  period: string;
+  description: string;
+  link?: string;
+};
 
-export function Experience() {
+export function Experience({ data }: { data: ExperienceData[] }) {
   return (
     <motion.section
       initial={{ opacity: 0, y: 16 }}
@@ -43,7 +21,7 @@ export function Experience() {
     >
       <h2 className="text-2xl font-bold mb-8 text-foreground">Expérience</h2>
       <div className="space-y-10">
-        {experiences.map((exp, index) => (
+        {data.map((exp, index) => (
           <motion.div
             key={index}
             initial={{ opacity: 0, x: -8 }}

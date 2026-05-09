@@ -8,7 +8,16 @@ import {
   IconBrandLinkedin,
 } from "@tabler/icons-react";
 
-export function Contact() {
+type ContactData = {
+  languages: {
+    flag: string;
+    name: string;
+    level: string;
+  }[];
+  phone: string;
+};
+
+export function Contact({ data }: { data: ContactData }) {
   return (
     <motion.section
       initial={{ opacity: 0, y: 16 }}
@@ -20,18 +29,14 @@ export function Contact() {
       <div className="mb-12">
         <h2 className="text-2xl font-bold mb-6 text-foreground">Langues</h2>
         <div className="flex gap-6 text-sm">
-          <div className="flex items-center gap-2">
-            <span>🇲🇬</span>
-            <span className="text-muted">Malagasy — <span className="text-foreground">Natif</span></span>
-          </div>
-          <div className="flex items-center gap-2">
-            <span>🇫🇷</span>
-            <span className="text-muted">Français — <span className="text-foreground">Courant</span></span>
-          </div>
-          <div className="flex items-center gap-2">
-            <span>🇬🇧</span>
-            <span className="text-muted">Anglais — <span className="text-foreground">Intermédiaire</span></span>
-          </div>
+          {data.languages.map((lang, index) => (
+            <div key={index} className="flex items-center gap-2">
+              <span>{lang.flag}</span>
+              <span className="text-muted">
+                {lang.name} — <span className="text-foreground">{lang.level}</span>
+              </span>
+            </div>
+          ))}
         </div>
       </div>
 
@@ -46,7 +51,7 @@ export function Contact() {
         </a>
         <div className="flex items-center gap-3 p-4 rounded-xl bg-zinc-500/5 dark:bg-white/5 border border-border text-sm">
           <IconPhone size={20} className="text-muted" />
-          <span className="text-muted">+261 34 30 638 17</span>
+          <span className="text-muted">{data.phone}</span>
         </div>
         <a
           href="https://github.com/normanXCat"

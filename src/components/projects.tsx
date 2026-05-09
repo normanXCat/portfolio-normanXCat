@@ -4,46 +4,14 @@ import { motion } from "framer-motion";
 import { IconExternalLink } from "@tabler/icons-react";
 import { TechBadge } from "./tech-badge";
 
-const projects = [
-  {
-    name: "SalonAtlas",
-    url: "https://salon-atlas.mada-digital.xyz/",
-    description: "Annuaire des salons de coiffure à Madagascar. Réalisé chez Mada Digital.",
-    stack: ["Next.js", "TypeScript", "Tailwind CSS"],
-  },
-  {
-    name: "Skolara",
-    url: "https://skolara.vercel.app/",
-    description: "Plateforme éducative scolaire & préscolaire : calendrier, actualités, pré-inscription, blog.",
-    stack: ["Next.js", "TypeScript", "Tailwind CSS"],
-  },
-  {
-    name: "DocuLink",
-    url: "#",
-    description: "Bibliothèque virtuelle pour consulter et gérer livres, mémoires et thèses.",
-    stack: ["Next.js", "Node.js", "MySQL", "API REST"],
-  },
-  {
-    name: "MeetSpace",
-    url: "#",
-    description: "Prototype de réservation de salles — gestion événements, disponibilité. MVP 48h.",
-    stack: ["React", "Node.js"],
-  },
-  {
-    name: "CV Builder",
-    url: "#",
-    description: "App web de création et export de CV en PDF. Formulaires validés, composants réutilisables.",
-    stack: ["React", "TypeScript", "Tailwind CSS"],
-  },
-  {
-    name: "Hackathon Redshalk",
-    url: "#",
-    description: "Plateforme de découverte touristique (2ème place). Prototype front-end 48h.",
-    stack: ["React", "Tailwind CSS"],
-  },
-];
+type ProjectData = {
+  name: string;
+  url: string;
+  description: string;
+  stack: string[];
+};
 
-export function Projects() {
+export function Projects({ data }: { data: ProjectData[] }) {
   return (
     <motion.section
       initial={{ opacity: 0, y: 16 }}
@@ -54,7 +22,7 @@ export function Projects() {
     >
       <h2 className="text-2xl font-bold mb-8 text-foreground">Projets</h2>
       <div className="grid gap-8">
-        {projects.map((project, index) => (
+        {data.map((project, index) => (
           <motion.div
             key={project.name}
             initial={{ opacity: 0, y: 12 }}
