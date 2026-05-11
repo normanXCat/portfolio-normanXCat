@@ -7,7 +7,6 @@ import {
 } from "next/font/google";
 import "./globals.css";
 import { ScrollProgress } from "@/components/scroll-progress";
-import { IconNetwork } from "@tabler/icons-react";
 
 const pacifico = Pacifico({
   subsets: ["latin"],
@@ -77,8 +76,16 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       { url: "/favicon_io/favicon.ico" },
-      { url: "/favicon_io/favicon-16x16.png", sizes: "16x16", type: "image/png" },
-      { url: "/favicon_io/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      {
+        url: "/favicon_io/favicon-16x16.png",
+        sizes: "16x16",
+        type: "image/png",
+      },
+      {
+        url: "/favicon_io/favicon-32x32.png",
+        sizes: "32x32",
+        type: "image/png",
+      },
     ],
     shortcut: "/favicon_io/favicon.ico",
     apple: [
