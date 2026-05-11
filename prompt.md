@@ -372,7 +372,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Norman Vonizara — Développeur Full-Stack",
     description: "Portfolio de Norman Vonizara.",
-    url: "https://normanvonizara.dev",
+    url: "https://norman-x-cat.vercel.app",
     locale: "fr_FR",
     type: "website",
   },

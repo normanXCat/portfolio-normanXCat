@@ -1,5 +1,10 @@
 import type { Metadata } from "next";
-import { Pacifico, Source_Code_Pro, Pangolin, Advent_Pro } from "next/font/google";
+import {
+  Pacifico,
+  Source_Code_Pro,
+  Pangolin,
+  Advent_Pro,
+} from "next/font/google";
 import "./globals.css";
 import { ScrollProgress } from "@/components/scroll-progress";
 import { IconNetwork } from "@tabler/icons-react";
@@ -29,48 +34,44 @@ const adventPro = Advent_Pro({
 });
 
 export const metadata: Metadata = {
-  title: "Norman Vonizara | Développeur Full-Stack & Télécommunications",
+  metadataBase: new URL("https://norman-x-cat.vercel.app"),
+
+  title: {
+    default: "Norman Vonizara | Développeur Full-Stack",
+    template: "%s | Norman Vonizara",
+  },
+
   description:
-    "Portfolio de Norman Vonizara. Expertises en Développement Web & Mobile, Télécommunications, Réseaux, DevOps, Machine Learning et systèmes embarqués (Arduino).",
-  keywords: [
-    "Norman Vonizara",
-    "Développeur Full-Stack",
-    "Frontend",
-    "Next.js",
-    "React",
-    "Télécommunications",
-    "Réseaux",
-    "DevOps",
-    "Machine Learning",
-    "Arduino",
-    "Madagascar",
-    "Antsiranana"
+    "Portfolio de Norman Vonizara, développeur Full-Stack orienté Frontend. Master 1 STIC Télécommunications & Réseaux — ESP Antsiranana.",
+
+  authors: [
+    { name: "Norman Vonizara", url: "https://norman-x-cat.vercel.app" },
   ],
-  authors: [{ name: "Norman Vonizara" }],
   creator: "Norman Vonizara",
+  publisher: "Norman Vonizara",
+
   openGraph: {
-    title: "Norman Vonizara — Développeur Full-Stack",
+    type: "website",
+    locale: "fr_FR",
+    url: "https://norman-x-cat.vercel.app",
+    siteName: "Norman Vonizara",
+    title: "Norman Vonizara | Développeur Full-Stack",
     description:
-      "Découvrez mes projets et compétences en développement Web/Mobile, Télécommunications, DevOps et Machine Learning.",
-    url: "https://normanvonizara.dev",
-    siteName: "Portfolio Norman Vonizara",
+      "Portfolio de Norman Vonizara, développeur Full-Stack orienté Frontend.",
     images: [
       {
-        url: "/profil.norman.jpg",
-        width: 800,
-        height: 800,
-        alt: "Photo de profil de Norman Vonizara",
+        url: "/og-image.png", // ajoute une image dans public/
+        width: 1200,
+        height: 630,
+        alt: "Norman Vonizara — Portfolio",
       },
     ],
-    locale: "fr_FR",
-    type: "website",
   },
+
   twitter: {
     card: "summary_large_image",
-    title: "Norman Vonizara — Développeur Full-Stack",
-    description:
-      "Découvrez mes projets et compétences en développement Web/Mobile, Télécommunications, DevOps et Machine Learning.",
-    images: ["/profil.norman.jpg"],
+    title: "Norman Vonizara | Développeur Full-Stack",
+    description: "Portfolio de Norman Vonizara.",
   },
 };
 
@@ -87,11 +88,7 @@ export default function RootLayout({
       <body
         className={`${pacifico.variable} ${sourceCodePro.variable} ${pangolin.variable} ${adventPro.variable} antialiased`}
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          enableSystem
-        >
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
           <ThemeToggle />
           <ScrollProgress />
           <div className="grid-background" aria-hidden="true" />
