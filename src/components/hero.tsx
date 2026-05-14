@@ -36,6 +36,14 @@ type HeroData = {
   };
 };
 
+/**
+ * Composant Hero de la page d'accueil.
+ * Affiche le nom, le titre, la biographie, la photo de profil et les liens sociaux.
+ * 
+ * @param props - Les propriétés du composant.
+ * @param props.data - Les données du profil pour la section Hero.
+ * @returns Le composant Hero.
+ */
 export function Hero({ data }: { data: HeroData }) {
   const [isLoaded, setIsLoaded] = useState(false);
 

@@ -9,6 +9,12 @@ import { Education } from "@/components/education";
 import { Contact } from "@/components/contact";
 import { Separator } from "@/components/separator";
 
+/**
+ * Composant de la page d'accueil.
+ * Récupère les données du portfolio à partir d'un fichier JSON et affiche les différentes sections.
+ * 
+ * @returns Le composant de la page d'accueil.
+ */
 export default async function Home() {
   const filePath = path.join(process.cwd(), "public", "data.json");
   const fileContents = await fs.readFile(filePath, "utf8");

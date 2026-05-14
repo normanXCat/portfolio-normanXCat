@@ -1,5 +1,10 @@
 import { MetadataRoute } from "next";
 
+/**
+ * Génère le plan du site (sitemap.xml).
+ * 
+ * @returns La configuration du sitemap.
+ */
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {

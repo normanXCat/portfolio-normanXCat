@@ -37,6 +37,15 @@ interface TechBadgeProps {
   className?: string;
 }
 
+/**
+ * Composant de badge technologique.
+ * Affiche le nom d'une technologie avec son icône correspondante (si disponible).
+ * 
+ * @param props - Les propriétés du composant.
+ * @param props.children - Le nom de la technologie à afficher.
+ * @param props.className - Classes CSS additionnelles.
+ * @returns Le composant TechBadge.
+ */
 export function TechBadge({ children, className }: TechBadgeProps) {
   const text = typeof children === "string" ? children : "";
   const IconComponent = techIcons[text];

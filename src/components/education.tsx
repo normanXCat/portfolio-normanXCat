@@ -9,6 +9,14 @@ type EducationData = {
   school: string;
 };
 
+/**
+ * Composant de la section "Formation".
+ * Affiche le parcours académique, incluant les diplômes, périodes et écoles.
+ * 
+ * @param props - Les propriétés du composant.
+ * @param props.data - Un tableau d'objets contenant les informations sur la formation.
+ * @returns Le composant Education.
+ */
 export function Education({ data }: { data: EducationData[] }) {
   return (
     <motion.section

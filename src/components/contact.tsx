@@ -17,6 +17,14 @@ type ContactData = {
   phone: string;
 };
 
+/**
+ * Composant de la section "Contact" et "Langues".
+ * Affiche les langues parlées et les différents moyens de contact (email, téléphone, liens sociaux).
+ * 
+ * @param props - Les propriétés du composant.
+ * @param props.data - Les données de contact et de langues.
+ * @returns Le composant Contact.
+ */
 export function Contact({ data }: { data: ContactData }) {
   return (
     <motion.section

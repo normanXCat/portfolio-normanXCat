@@ -2,6 +2,12 @@
 
 import { motion, useScroll, useSpring } from "framer-motion";
 
+/**
+ * Composant de barre de progression de défilement.
+ * Affiche une barre en haut de la page qui indique la progression du défilement de l'utilisateur.
+ * 
+ * @returns Le composant ScrollProgress.
+ */
 export function ScrollProgress() {
   const { scrollYProgress } = useScroll();
 
