@@ -38,6 +38,14 @@ type SkillData = {
   icon: string;
 };
 
+/**
+ * Composant de la section "Tech" (Compétences).
+ * Affiche une grille de compétences avec icônes, noms et descriptions.
+ * 
+ * @param props - Les propriétés du composant.
+ * @param props.data - Un tableau d'objets contenant les informations sur les compétences techniques.
+ * @returns Le composant Skills.
+ */
 export function Skills({ data }: { data: SkillData[] }) {
   return (
     <motion.section

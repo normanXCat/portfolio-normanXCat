@@ -102,6 +102,14 @@ export const metadata: Metadata = {
 import { ThemeProvider } from "@/components/theme-provider";
 import { ThemeToggle } from "@/components/theme-toggle";
 
+/**
+ * Composant de mise en page racine de l'application.
+ * Définit la structure HTML de base, les polices, le thème et les composants globaux.
+ * 
+ * @param props - Les propriétés du composant.
+ * @param props.children - Le contenu à afficher à l'intérieur de la mise en page.
+ * @returns Le composant RootLayout.
+ */
 export default function RootLayout({
   children,
 }: Readonly<{

@@ -10,6 +10,14 @@ type ExperienceData = {
   link?: string;
 };
 
+/**
+ * Composant de la section "Expérience".
+ * Affiche le parcours professionnel sous forme de chronologie.
+ * 
+ * @param props - Les propriétés du composant.
+ * @param props.data - Un tableau d'objets contenant les informations sur les expériences professionnelles.
+ * @returns Le composant Experience.
+ */
 export function Experience({ data }: { data: ExperienceData[] }) {
   return (
     <motion.section

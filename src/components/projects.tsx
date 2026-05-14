@@ -11,6 +11,14 @@ type ProjectData = {
   stack: string[];
 };
 
+/**
+ * Composant de la section "Projets".
+ * Affiche une liste de projets avec leurs descriptions, liens et piles technologiques.
+ * 
+ * @param props - Les propriétés du composant.
+ * @param props.data - Un tableau d'objets contenant les informations sur les projets.
+ * @returns Le composant Projects.
+ */
 export function Projects({ data }: { data: ProjectData[] }) {
   return (
     <motion.section

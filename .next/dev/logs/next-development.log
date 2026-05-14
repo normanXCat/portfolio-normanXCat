@@ -1,6 +1,1 @@
-{"timestamp":"00:00:01.753","source":"Server","level":"LOG","message":""}
-{"timestamp":"00:00:17.270","source":"Browser","level":"WARN","message":"Image with src \"/profil.norman.jpg\" has \"fill\" but is missing \"sizes\" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes"}
-{"timestamp":"00:00:17.315","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mImage with src \\\"/profil.norman.jpg\\\" has \\\"fill\\\" but is missing \\\"sizes\\\" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes\\u001b[39m\""}
-{"timestamp":"00:00:17.316","source":"Browser","level":"WARN","message":"\u001b[33mImage with src \"/profil.norman.jpg\" has \"fill\" but is missing \"sizes\" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes\u001b[39m"}
-{"timestamp":"00:01:38.191","source":"Server","level":"LOG","message":"✓ Compiled in 1015ms"}
-{"timestamp":"00:01:44.037","source":"Server","level":"LOG","message":"✓ Compiled in 545ms"}
+{"timestamp":"00:00:03.528","source":"Server","level":"LOG","message":""}

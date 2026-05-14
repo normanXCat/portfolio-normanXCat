@@ -2,6 +2,14 @@
 
 import { motion } from "framer-motion";
 
+/**
+ * Composant de la section "À propos".
+ * Affiche une liste de descriptions sur le parcours ou les réalisations.
+ * 
+ * @param props - Les propriétés du composant.
+ * @param props.data - Un tableau de chaînes de caractères contenant les descriptions.
+ * @returns Le composant About.
+ */
 export function About({ data }: { data: string[] }) {
   return (
     <motion.section
