@@ -122,6 +122,11 @@
       "icon": "IconComponents"
     },
     {
+      "name": "Figma",
+      "desc": "Maquettes et prototypes d'applications",
+      "icon": "IconBrandFigma"
+    },
+    {
       "name": "Node.js",
       "desc": "APIs REST backend",
       "icon": "IconBrandNodejs"
