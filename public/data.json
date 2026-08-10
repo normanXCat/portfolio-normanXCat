@@ -11,7 +11,7 @@
     }
   },
   "about": [
-    "Stage **Mada Digital** (Antananarivo, 2025 – juillet 2026) — développement de SalonAtlas, tests Vogherra Café, maquette Figma Hotel Victoria GPlus",
+    "Stage **Mada Digital** (Antsiranana Lazaret Nord, 2025 – juillet 2026) — développement de SalonAtlas, tests Vogherra Café, maquette Figma Hotel Victoria GPlus",
     "Développé et déployé **SalonAtlas** — annuaire de salons de coiffure en Suisse",
     "Maquette **Hotel Victoria GPlus** — plateforme hôtelière sur Figma",
     "Développé **Skolara** — plateforme éducative scolaire et préscolaire (Next.js, blog, pré-inscription)",
@@ -22,8 +22,7 @@
   ],
   "experience": [
     {
-      "role": "Stage — Mada Digital",
-      "location": "Antananarivo",
+      "location": "Antsiranana Lazaret Nord",
       "period": "2025 – 07/2026",
       "description": "Développement du site SalonAtlas, tests du site Vogherra Café, maquette Figma de la plateforme Hotel Victoria GPlus.",
       "link": "mada-digital.net"
