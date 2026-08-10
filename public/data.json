@@ -2,11 +2,7 @@
   "hero": {
     "name": "Norman Vonizara",
     "title": "Développeur Full-Stack · Frontend Focused",
-    "bio": "Alliant une expertise en développement Web & Mobile à une solide formation en Télécommunications et Réseaux. J'intègre également le DevOps, le Machine Learning et l'embarqué (Arduino) dans mes projets. Stage front-end terminé en juillet 2026 chez",
-    "currentCompany": {
-      "name": "Mada Digital",
-      "url": "https://www.mada-digital.net"
-    },
+    "bio": "Alliant une expertise en développement Web & Mobile à une solide formation en Télécommunications et Réseaux. J'intègre également le DevOps, le Machine Learning et l'embarqué (Arduino) dans mes projets.",
     "location": "Antsiranana, Madagascar",
     "links": {
       "github": "https://github.com/normanXCat",
@@ -66,13 +62,13 @@
     },
     {
       "name": "Hotel Victoria GPlus",
-      "url": "#",
+      "url": "https://dev-victoria.webapp-gplus.com/",
       "description": "Maquette Figma d'une plateforme hôtelière. Réalisée lors du stage chez Mada Digital.",
       "stack": ["Figma"]
     },
     {
       "name": "Vogherra Café",
-      "url": "#",
+      "url": "https://vogheracoffee.com/",
       "description": "Tests et validation du site web. Réalisé lors du stage chez Mada Digital.",
       "stack": ["Tests", "QA"]
     },

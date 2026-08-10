@@ -24,10 +24,6 @@ type HeroData = {
   name: string;
   title: string;
   bio: string;
-  currentCompany: {
-    name: string;
-    url: string;
-  };
   location: string;
   links: {
     github: string;
@@ -83,16 +79,7 @@ export function Hero({ data }: { data: HeroData }) {
       </div>
 
       <p className="text-muted max-w-lg leading-relaxed text-lg mt-2">
-        {data.bio}{" "}
-        <a
-          href={data.currentCompany.url}
-          className="text-foreground underline underline-offset-4 hover:opacity-80 transition-opacity"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          {data.currentCompany.name}
-        </a>
-        .
+        {data.bio}
       </p>
 
       <div className="flex gap-5 mt-2">
