@@ -2,7 +2,7 @@
   "hero": {
     "name": "Norman Vonizara",
     "title": "Développeur Full-Stack · Frontend Focused",
-    "bio": "Alliant une expertise en développement Web & Mobile à une solide formation en Télécommunications et Réseaux. J'intègre également le DevOps, le Machine Learning et l'embarqué (Arduino) dans mes projets. Actuellement en stage chez",
+    "bio": "Alliant une expertise en développement Web & Mobile à une solide formation en Télécommunications et Réseaux. J'intègre également le DevOps, le Machine Learning et l'embarqué (Arduino) dans mes projets. Stage front-end terminé en juillet 2026 chez",
     "currentCompany": {
       "name": "Mada Digital",
       "url": "https://www.mada-digital.net"
@@ -15,8 +15,9 @@
     }
   },
   "about": [
-    "Actuellement en stage chez **Mada Digital** (Antsiranana) — développement de SalonAtlas et Skolara",
-    "Développé et déployé **SalonAtlas** — annuaire de salons de coiffure à Madagascar",
+    "Stage **Mada Digital** (Antananarivo, 2025 – juillet 2026) — développement de SalonAtlas, tests Vogherra Café, maquette Figma Hotel Victoria GPlus",
+    "Développé et déployé **SalonAtlas** — annuaire de salons de coiffure en Suisse",
+    "Maquette **Hotel Victoria GPlus** — plateforme hôtelière sur Figma",
     "Développé **Skolara** — plateforme éducative scolaire et préscolaire (Next.js, blog, pré-inscription)",
     "**2ème place au Hackathon Redshalk 2025** — prototype plateforme tourisme, rôle front-end principal",
     "Stage **Nisasarana SARLU** (Antananarivo) — développement front-end, certifié en interne",
@@ -27,8 +28,8 @@
     {
       "role": "Stage — Mada Digital",
       "location": "Antananarivo",
-      "period": "2025 – présent",
-      "description": "Développement front-end (SalonAtlas, Skolara), intégration de maquettes, déploiement.",
+      "period": "2025 – 07/2026",
+      "description": "Développement du site SalonAtlas, tests du site Vogherra Café, maquette Figma de la plateforme Hotel Victoria GPlus.",
       "link": "mada-digital.net"
     },
     {
@@ -54,7 +55,7 @@
     {
       "name": "SalonAtlas",
       "url": "https://salon-atlas.mada-digital.xyz/",
-      "description": "Annuaire des salons de coiffure à Madagascar. Réalisé chez Mada Digital.",
+      "description": "Annuaire des salons de coiffure en Suisse. Développé et déployé lors du stage chez Mada Digital.",
       "stack": [
         "React + Vite",
         "TypeScript",
@@ -62,6 +63,18 @@
         "Laravel",
         "PostgreSQL"
       ]
+    },
+    {
+      "name": "Hotel Victoria GPlus",
+      "url": "#",
+      "description": "Maquette Figma d'une plateforme hôtelière. Réalisée lors du stage chez Mada Digital.",
+      "stack": ["Figma"]
+    },
+    {
+      "name": "Vogherra Café",
+      "url": "#",
+      "description": "Tests et validation du site web. Réalisé lors du stage chez Mada Digital.",
+      "stack": ["Tests", "QA"]
     },
     {
       "name": "Skolara",
