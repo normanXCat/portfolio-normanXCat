@@ -10,7 +10,7 @@ export function Skills({ data }: { data: Record<string, string> }) {
   const entries = Object.entries(data);
 
   return (
-    <FadeIn as="section" id="competences" className="mb-20 md:mb-28 scroll-mt-24">
+    <FadeIn as="section" id="competences" className="mb-20 md:mb-28 scroll-mt-24 max-w-[740px] mx-auto">
       <h2 className="text-xs font-medium uppercase tracking-[0.2em] text-muted mb-6">
         Compétences
       </h2>

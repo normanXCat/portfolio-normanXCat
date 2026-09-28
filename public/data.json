@@ -17,38 +17,38 @@
       "name": "Skolara",
       "url": "https://skolara.vercel.app/",
       "description": "Plateforme éducative pour écoles et structures préscolaires : actualités, calendrier, blog et pré-inscription en ligne.",
-      "stack": "Next.js · TypeScript · Tailwind CSS · Express · Prisma · PostgreSQL"
+      "stack": ["Next.js", "TypeScript", "Tailwind CSS", "Express", "Prisma", "PostgreSQL"]
     },
     {
       "name": "DiégoInfo",
       "url": null,
       "private": true,
-      "description": "Application mobile citoyenne pour les habitants d'Antsiranana : alertes en temps réel (coupures JIRAMA, météo, incidents), annuaire des services locaux et signalements citoyens. Conçue pour fonctionner hors ligne, avec synchronisation des seules modifications pour économiser les données mobiles.",
-      "stack": "Expo / React Native · NestJS · Prisma · PostgreSQL · Firebase · SQLite"
+      "description": "Application mobile citoyenne pour les habitants d'Antsiranana : alertes en temps réel (coupures JIRAMA, météo, incidents), annuaire des services locaux et signalements citoyens.",
+      "stack": ["Expo / React Native", "NestJS", "Prisma", "PostgreSQL", "Firebase", "SQLite"]
     },
     {
       "name": "SalonAtlas",
       "url": "https://salon-atlas.mada-digital.xyz/",
       "description": "Annuaire des salons de coiffure en Suisse, développé et déployé lors de mon stage chez Mada Digital.",
-      "stack": "React · Vite · TypeScript · Tailwind CSS · Laravel · PostgreSQL"
+      "stack": ["React", "Vite", "TypeScript", "Tailwind CSS", "Laravel", "PostgreSQL"]
     },
     {
       "name": "CoFound.mg",
       "url": "https://co-found-mg.vercel.app/",
-      "description": "Plateforme de mise en relation d'étudiants de formations différentes pour co-fonder des startups à Madagascar. Conçue pendant le programme ITOVIA 2026, sélectionnée pour la finale du hackathon.",
-      "stack": "React · Vite · TypeScript · Tailwind CSS · NestJS · Prisma · PostgreSQL"
+      "description": "Plateforme de mise en relation d'étudiants de formations différentes pour co-fonder des startups à Madagascar. Sélectionnée pour la finale du hackathon ITOVIA 2026.",
+      "stack": ["React", "Vite", "TypeScript", "Tailwind CSS", "NestJS", "Prisma", "PostgreSQL"]
     },
     {
       "name": "Comptage de personnes en temps réel",
       "url": "https://github.com/normanXCat/realtime-people-counting",
       "description": "Système de vision par ordinateur qui détecte, suit et ré-identifie des personnes dans un flux vidéo pour en assurer le comptage.",
-      "stack": "Python · YOLO · OpenCV · Bot-SORT · ReID"
+      "stack": ["Python", "YOLO", "OpenCV", "Bot-SORT", "ReID"]
     },
     {
       "name": "Hotel Victoria GPlus",
       "url": "https://dev-victoria.webapp-gplus.com/",
       "description": "Conception des maquettes Figma d'une plateforme hôtelière, réalisée lors de mon stage chez Mada Digital.",
-      "stack": "Figma"
+      "stack": ["Figma"]
     }
   ],
   "skills": {

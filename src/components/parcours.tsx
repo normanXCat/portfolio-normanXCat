@@ -20,7 +20,7 @@ type ParcoursData = {
  */
 export function Parcours({ data }: { data: ParcoursData }) {
   return (
-    <FadeIn as="section" id="parcours" className="mb-20 md:mb-28 scroll-mt-24">
+    <FadeIn as="section" id="parcours" className="mb-20 md:mb-28 scroll-mt-24 max-w-[740px] mx-auto">
       <h2 className="text-xs font-medium uppercase tracking-[0.2em] text-muted mb-8">
         Parcours
       </h2>

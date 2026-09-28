@@ -7,7 +7,7 @@ import { FadeIn } from "./fade-in";
  */
 export function About({ text }: { text: string }) {
   return (
-    <FadeIn as="section" id="a-propos" className="mb-20 md:mb-28 scroll-mt-24">
+    <FadeIn as="section" id="a-propos" className="mb-20 md:mb-28 scroll-mt-24 max-w-[740px] mx-auto">
       <h2 className="text-xs font-medium uppercase tracking-[0.2em] text-muted mb-6">
         À propos
       </h2>

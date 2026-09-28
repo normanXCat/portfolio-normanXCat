@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Libre_Franklin } from "next/font/google";
 import "./globals.css";
+import { ThemeProvider } from "@/components/theme-provider";
+import { ThemeToggle } from "@/components/theme-toggle";
+import { Background } from "@/components/background";
+import { PixelCat } from "@/components/pixel-cat";
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
@@ -76,7 +80,9 @@ export const metadata: Metadata = {
 };
 
 /**
- * Layout racine — structure minimale, deux polices, pas de navbar ni de toggle de thème.
+ * Layout racine — structure minimale, deux polices.
+ * Intègre le provider de thème, le fond décoratif subtil,
+ * le bouton de thème fixé en haut à droite et le chat pixel-art persistant.
  */
 export default function RootLayout({
   children,
@@ -84,13 +90,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr">
+    <html lang="fr" suppressHydrationWarning>
       <body
-        className={`${cormorant.variable} ${libreFranklin.variable} antialiased`}
+        className={`${cormorant.variable} ${libreFranklin.variable} antialiased selection:bg-accent/20 selection:text-foreground`}
       >
-        <main className="max-w-[740px] mx-auto px-6 py-16 md:py-28">
-          {children}
-        </main>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <Background />
+          <ThemeToggle />
+          <PixelCat />
+          <main className="w-full max-w-[1140px] mx-auto px-6 py-16 md:py-28 relative z-10">
+            {children}
+          </main>
+        </ThemeProvider>
       </body>
     </html>
   );
