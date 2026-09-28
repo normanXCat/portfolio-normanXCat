@@ -1,77 +1,52 @@
 import type { Metadata } from "next";
-import {
-  Pacifico,
-  Source_Code_Pro,
-  Pangolin,
-  Advent_Pro,
-} from "next/font/google";
+import { Cormorant_Garamond, Libre_Franklin } from "next/font/google";
 import "./globals.css";
-import { ScrollProgress } from "@/components/scroll-progress";
 
-const pacifico = Pacifico({
+const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
-  weight: ["400"],
-  variable: "--font-pacifico",
+  weight: ["400", "600", "700"],
+  variable: "--font-cormorant",
+  display: "swap",
 });
 
-const sourceCodePro = Source_Code_Pro({
+const libreFranklin = Libre_Franklin({
   subsets: ["latin"],
-  weight: ["200", "400", "700", "900"],
-  variable: "--font-source-code",
-});
-
-const pangolin = Pangolin({
-  subsets: ["latin"],
-  weight: ["400"],
-  variable: "--font-pangolin",
-});
-
-const adventPro = Advent_Pro({
-  subsets: ["latin"],
-  weight: ["100", "400", "700", "900"],
-  variable: "--font-advent-pro",
+  weight: ["400", "500"],
+  variable: "--font-libre-franklin",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://norman-x-cat.vercel.app"),
 
   title: {
-    default: "Norman Vonizara | Développeur Full-Stack & Réseaux",
+    default: "Norman Vonizara — Développeur Full-Stack",
     template: "%s | Norman Vonizara",
   },
 
   description:
-    "Portfolio de Norman Vonizara, développeur Full-Stack & administrateur réseaux : web & mobile, télécommunications, IA/Computer Vision et DevOps. Master 1 STIC Télécommunications & Réseaux — ESP Antsiranana.",
+    "Portfolio de Norman Vonizara — Développeur Full-Stack & Réseaux, Télécommunications, IA & DevOps. Master 1 STIC — ESP Antsiranana.",
 
   authors: [
     { name: "Norman Vonizara", url: "https://norman-x-cat.vercel.app" },
   ],
   creator: "Norman Vonizara",
-  publisher: "Norman Vonizara",
 
   openGraph: {
     type: "website",
     locale: "fr_FR",
     url: "https://norman-x-cat.vercel.app",
     siteName: "Norman Vonizara",
-    title: "Norman Vonizara | Développeur Full-Stack & Réseaux",
+    title: "Norman Vonizara — Développeur Full-Stack",
     description:
-      "Portfolio de Norman Vonizara, développeur Full-Stack & administrateur réseaux : web & mobile, réseaux IP, IA et DevOps.",
-    images: [
-      {
-        url: "/og-image.png", // ajoute une image dans public/
-        width: 1200,
-        height: 630,
-        alt: "Norman Vonizara — Portfolio",
-      },
-    ],
+      "Portfolio de Norman Vonizara — Développeur Full-Stack & Réseaux, Télécommunications, IA & DevOps.",
   },
 
   twitter: {
-    card: "summary_large_image",
-    title: "Norman Vonizara | Développeur Full-Stack & Réseaux",
+    card: "summary",
+    title: "Norman Vonizara — Développeur Full-Stack",
     description:
-      "Portfolio de Norman Vonizara, développeur Full-Stack & administrateur réseaux.",
+      "Portfolio de Norman Vonizara — Développeur Full-Stack & Réseaux, Télécommunications, IA & DevOps.",
   },
 
   icons: {
@@ -100,16 +75,8 @@ export const metadata: Metadata = {
   manifest: "/favicon_io/site.webmanifest",
 };
 
-import { ThemeProvider } from "@/components/theme-provider";
-import { ThemeToggle } from "@/components/theme-toggle";
-
 /**
- * Composant de mise en page racine de l'application.
- * Définit la structure HTML de base, les polices, le thème et les composants globaux.
- * 
- * @param props - Les propriétés du composant.
- * @param props.children - Le contenu à afficher à l'intérieur de la mise en page.
- * @returns Le composant RootLayout.
+ * Layout racine — structure minimale, deux polices, pas de navbar ni de toggle de thème.
  */
 export default function RootLayout({
   children,
@@ -117,19 +84,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr" suppressHydrationWarning>
+    <html lang="fr">
       <body
-        className={`${pacifico.variable} ${sourceCodePro.variable} ${pangolin.variable} ${adventPro.variable} antialiased`}
+        className={`${cormorant.variable} ${libreFranklin.variable} antialiased`}
       >
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
-          <ThemeToggle />
-          <ScrollProgress />
-          <div className="grid-background" aria-hidden="true" />
-
-          <main className="max-w-2xl mx-auto px-6 py-12 md:py-24 relative z-10">
-            {children}
-          </main>
-        </ThemeProvider>
+        <main className="max-w-[740px] mx-auto px-6 py-16 md:py-28">
+          {children}
+        </main>
       </body>
     </html>
   );
