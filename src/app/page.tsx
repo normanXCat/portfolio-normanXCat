@@ -1,21 +1,15 @@
 import { promises as fs } from "fs";
 import path from "path";
-import { Nav } from "@/components/nav";
 import { Hero } from "@/components/hero";
 import { About } from "@/components/about";
 import { Projects } from "@/components/projects";
 import { Skills } from "@/components/skills";
-import { Experience } from "@/components/experience";
-import { Education } from "@/components/education";
-import { Certifications } from "@/components/certifications";
+import { Parcours } from "@/components/parcours";
 import { Contact } from "@/components/contact";
-import { Separator } from "@/components/separator";
 
 /**
- * Composant de la page d'accueil.
- * Récupère les données du portfolio à partir d'un fichier JSON et affiche les différentes sections.
- * 
- * @returns Le composant de la page d'accueil.
+ * Page d'accueil — une seule page, défilement vertical, sans navbar.
+ * Lit les données depuis public/data.json.
  */
 export default async function Home() {
   const filePath = path.join(process.cwd(), "public", "data.json");
@@ -24,27 +18,12 @@ export default async function Home() {
 
   return (
     <>
-      <Nav data={data.navigation} />
       <Hero data={data.hero} />
-      <Separator />
-      <About data={data.about} />
-      <Separator />
+      <About text={data.about} />
       <Projects data={data.projects} />
-      <Separator />
       <Skills data={data.skills} />
-      <Separator />
-      <Experience data={data.experience} />
-      <Separator />
-      <Education data={data.education} />
-      <Separator />
-      <Certifications data={data.certifications} />
-      <Separator />
+      <Parcours data={data.parcours} />
       <Contact data={data.contact} />
-
-      <footer className="mt-24 pt-12 border-t border-border flex flex-col md:flex-row justify-between gap-4 text-xs text-muted font-medium uppercase tracking-widest">
-        <span>© {new Date().getFullYear()} Norman Vonizara</span>
-        <span>B.P 201, Antsiranana, Madagascar</span>
-      </footer>
     </>
   );
 }

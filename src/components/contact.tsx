@@ -1,115 +1,74 @@
 "use client";
 
-import { motion } from "framer-motion";
-import {
-  IconBrandGithub,
-  IconBrandLinkedin,
-  IconMail,
-  IconMapPin,
-  IconPhone,
-} from "@tabler/icons-react";
+import { FadeIn } from "./fade-in";
 
 type ContactData = {
   email: string;
   phone: string;
   github: string;
   linkedin: string;
-  location: string;
   availability: string;
-  languages: {
-    flag: string;
-    name: string;
-    level: string;
-  }[];
+  languages: string;
 };
 
-const cardClass =
-  "flex items-center gap-3 p-4 rounded-xl bg-zinc-500/5 dark:bg-white/5 border border-border text-sm";
-
 /**
- * Composant de la section "Contact" et "Langues".
- * Affiche la disponibilité, les langues parlées et les moyens de contact (email, téléphone, localisation, liens).
- *
- * @param props - Les propriétés du composant.
- * @param props.data - Les données de contact, de disponibilité et de langues.
- * @returns Le composant Contact.
+ * Section Contact & Footer — invitation, email, téléphone, liens, langues, disponibilité, copyright.
  */
 export function Contact({ data }: { data: ContactData }) {
   return (
-    <motion.section
-      id="contact"
-      initial={{ opacity: 0, y: 16 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5, delay: 0.6 }}
-      className="mb-16 scroll-mt-24"
-    >
-      <div className="mb-12">
-        <h2 className="text-2xl font-bold mb-6 text-foreground">Langues</h2>
-        <div className="flex gap-6 text-sm">
-          {data.languages.map((lang, index) => (
-            <div key={index} className="flex items-center gap-2">
-              <span>{lang.flag}</span>
-              <span className="text-muted">
-                {lang.name} — <span className="text-foreground">{lang.level}</span>
-              </span>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <h2 className="text-2xl font-bold mb-4 text-foreground italic">
-        Get in touch
+    <FadeIn as="footer" id="contact" className="scroll-mt-24">
+      <h2 className="text-xs font-medium uppercase tracking-[0.2em] text-muted mb-6">
+        Contact
       </h2>
-      <p className="text-muted text-sm mb-8">{data.availability}</p>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <p className="text-foreground/85 text-base mb-6">
+        Un projet en tête ou envie d&apos;échanger ? N&apos;hésitez pas à me contacter.
+      </p>
+
+      {/* Coordonnées */}
+      <div className="flex flex-wrap gap-x-4 gap-y-1 text-sm mb-4">
         <a
           href={`mailto:${data.email}`}
-          className={`${cardClass} hover:border-zinc-400 dark:hover:border-zinc-700 hover:bg-zinc-500/10 dark:hover:bg-white/10 transition-all group`}
+          className="link-underline text-accent"
         >
-          <IconMail size={20} className="text-muted group-hover:text-foreground" />
-          <span className="text-muted group-hover:text-foreground text-sm">
-            {data.email}
-          </span>
+          {data.email}
         </a>
-        <div className={cardClass}>
-          <IconPhone size={20} className="text-muted" />
-          <span className="text-muted">{data.phone}</span>
-        </div>
-        <a
-          href={data.github}
-          target="_blank"
-          rel="noopener noreferrer"
-          className={`${cardClass} hover:border-zinc-400 dark:hover:border-zinc-700 hover:bg-zinc-500/10 dark:hover:bg-white/10 transition-all group`}
-        >
-          <IconBrandGithub
-            size={20}
-            className="text-muted group-hover:text-foreground"
-          />
-          <span className="text-muted group-hover:text-foreground text-sm">
-            {data.github.replace("https://", "")}
-          </span>
-        </a>
+        <span className="text-border" aria-hidden="true">·</span>
+        <span className="text-muted">{data.phone}</span>
+        <span className="text-border" aria-hidden="true">·</span>
         <a
           href={data.linkedin}
           target="_blank"
           rel="noopener noreferrer"
-          className={`${cardClass} hover:border-zinc-400 dark:hover:border-zinc-700 hover:bg-zinc-500/10 dark:hover:bg-white/10 transition-all group`}
+          className="link-underline text-accent"
         >
-          <IconBrandLinkedin
-            size={20}
-            className="text-muted group-hover:text-foreground"
-          />
-          <span className="text-muted group-hover:text-foreground text-sm">
-            {data.linkedin.replace("https://", "")}
-          </span>
+          LinkedIn
         </a>
-        <div className={cardClass}>
-          <IconMapPin size={20} className="text-muted" />
-          <span className="text-muted">{data.location}</span>
-        </div>
+        <span className="text-border" aria-hidden="true">·</span>
+        <a
+          href={data.github}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="link-underline text-accent"
+        >
+          GitHub
+        </a>
       </div>
-    </motion.section>
+
+      {/* Langues */}
+      <p className="text-sm text-muted mb-2">
+        {data.languages}
+      </p>
+
+      {/* Disponibilité */}
+      <p className="text-sm text-muted mb-10">
+        {data.availability}
+      </p>
+
+      {/* Copyright */}
+      <p className="text-xs text-muted/60 border-t border-border pt-6">
+        © {new Date().getFullYear()} Norman Vonizara
+      </p>
+    </FadeIn>
   );
 }

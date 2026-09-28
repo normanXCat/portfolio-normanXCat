@@ -1,90 +1,66 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { IconExternalLink } from "@tabler/icons-react";
-import { TechBadge } from "./tech-badge";
+import { FadeIn } from "./fade-in";
 
 type ProjectData = {
   name: string;
-  url: string;
-  role: string;
+  url: string | null;
+  private?: boolean;
   description: string;
-  stack: string[];
+  stack: string;
 };
 
-const hasLink = (url: string) => Boolean(url) && url !== "#";
-
 /**
- * Composant de la section "Projets".
- * Affiche une liste de projets avec leur rôle, description, lien de démo et pile technologique.
- *
- * @param props - Les propriétés du composant.
- * @param props.data - Un tableau d'objets contenant les informations sur les projets.
- * @returns Le composant Projects.
+ * Section Projets — liste épurée, pas de cartes ni de captures.
+ * Titre (lien si disponible), description 1–2 lignes, stack en texte simple.
  */
 export function Projects({ data }: { data: ProjectData[] }) {
   return (
-    <motion.section
-      id="projets"
-      initial={{ opacity: 0, y: 16 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5, delay: 0.2 }}
-      className="mb-16 scroll-mt-24"
-    >
-      <h2 className="text-2xl font-bold mb-8 text-foreground">Projets</h2>
-      <div className="grid gap-8">
+    <FadeIn as="section" id="projets" className="mb-20 md:mb-28 scroll-mt-24">
+      <h2 className="text-xs font-medium uppercase tracking-[0.2em] text-muted mb-8">
+        Projets
+      </h2>
+
+      <div className="space-y-8">
         {data.map((project, index) => (
-          <motion.div
-            key={project.name}
-            initial={{ opacity: 0, y: 12 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.4, delay: 0.3 + index * 0.1 }}
-            className="group relative flex flex-col gap-3"
-          >
-            <div className="flex items-center justify-between gap-3">
-              {hasLink(project.url) ? (
+          <FadeIn key={project.name} delay={index * 0.06} className="group">
+            {/* Titre + mention privée */}
+            <div className="flex items-baseline gap-2 mb-1">
+              {project.url ? (
                 <a
                   href={project.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-lg font-bold text-foreground hover:opacity-80 transition-opacity flex items-center gap-1.5"
+                  className="font-serif text-xl font-semibold text-foreground link-underline"
                 >
                   {project.name}
-                  <IconExternalLink
-                    size={16}
-                    className="text-muted group-hover:text-foreground transition-colors"
-                  />
                 </a>
               ) : (
-                <span className="text-lg font-bold text-foreground">
+                <span className="font-serif text-xl font-semibold text-foreground">
                   {project.name}
                 </span>
               )}
-              {!hasLink(project.url) && <TechBadge>Bientôt disponible</TechBadge>}
+              {project.private && (
+                <span className="text-xs text-muted italic">
+                  Dépôt privé
+                </span>
+              )}
             </div>
 
-            {project.role && (
-              <p className="text-xs text-muted uppercase tracking-widest font-bold">
-                {project.role}
-              </p>
-            )}
-
-            <p className="text-muted text-sm leading-relaxed">
+            {/* Description */}
+            <p className="text-muted text-sm leading-relaxed mb-1.5">
               {project.description}
             </p>
 
-            {project.stack.length > 0 && (
-              <div className="flex flex-wrap gap-2">
-                {project.stack.map((tech) => (
-                  <TechBadge key={tech}>{tech}</TechBadge>
-                ))}
-              </div>
+            {/* Stack en texte simple */}
+            {project.stack && (
+              <p className="text-xs text-muted/70">
+                {project.stack}
+              </p>
             )}
-          </motion.div>
+          </FadeIn>
         ))}
       </div>
-    </motion.section>
+    </FadeIn>
   );
 }
