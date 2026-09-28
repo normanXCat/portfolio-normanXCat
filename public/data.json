@@ -1,79 +1,53 @@
 {
   "hero": {
     "name": "Norman Vonizara",
-    "title": "Développeur Full-Stack · Frontend Focused",
-    "bio": "Alliant une expertise en développement Web & Mobile à une solide formation en Télécommunications et Réseaux. J'intègre également le DevOps, le Machine Learning et l'embarqué (Arduino) dans mes projets.",
-    "location": "Antsiranana, Madagascar",
+    "title": "Développeur Full-Stack & Réseaux | Télécommunications, IA & DevOps",
+    "bio": "Développeur Full-Stack et administrateur réseaux : je conçois des applications web et mobiles complètes, de l'infrastructure réseau à l'interface, en y intégrant l'IA et le DevOps.",
+    "location": "Antsiranana 201, Madagascar",
+    "cta": {
+      "projects": "Voir mes projets",
+      "resume": "Télécharger mon CV",
+      "resumeUrl": "/curriculum_vitae_normaXCat.pdf"
+    },
     "links": {
       "github": "https://github.com/normanXCat",
       "linkedin": "https://linkedin.com/in/norman-vonizara-07b96b36a/",
       "email": "normanvonizara@gmail.com"
     }
   },
-  "about": [
-    "Stage **Mada Digital** (Antsiranana Lazaret Nord, 2025 – juillet 2026) — développement de SalonAtlas, tests Vogherra Café, maquette Figma Hotel Victoria GPlus",
-    "Développé et déployé **SalonAtlas** — annuaire de salons de coiffure en Suisse",
-    "Maquette **Hotel Victoria GPlus** — plateforme hôtelière sur Figma",
-    "Développé **Skolara** — plateforme éducative scolaire et préscolaire (Next.js, blog, pré-inscription)",
-    "**2ème place au Hackathon Redshalk 2025** — prototype plateforme tourisme, rôle front-end principal",
-    "Stage **Nisasarana SARLU** (Antananarivo) — développement front-end, certifié en interne",
-    "Atelier **Arduino INNOVA-DAYS** — programmation embarquée C/C++",
-    "Étudiant en **Master 1 Mention STIC**, parcours Télécommunications et Réseaux, ESP Antsiranana"
+  "navigation": [
+    { "label": "À propos", "href": "#a-propos" },
+    { "label": "Projets", "href": "#projets" },
+    { "label": "Compétences", "href": "#competences" },
+    { "label": "Expérience", "href": "#experience" },
+    { "label": "Formation", "href": "#formation" },
+    { "label": "Certifications", "href": "#certifications" },
+    { "label": "Contact", "href": "#contact" }
   ],
-  "experience": [
-    {
-      "location": "Antsiranana Lazaret Nord",
-      "period": "2025 – 07/2026",
-      "description": "Développement du site SalonAtlas, tests du site Vogherra Café, maquette Figma de la plateforme Hotel Victoria GPlus.",
-      "link": "mada-digital.net"
-    },
-    {
-      "role": "Stage — Nisasarana SARLU",
-      "location": "Ivato Antananarivo",
-      "period": "11/2025 – 12/2025",
-      "description": "Développement front-end, maintenance informatique, certification interne obtenue."
-    },
-    {
-      "role": "Hackathon Redshalk",
-      "location": "Antsiranana",
-      "period": "08/2025",
-      "description": "Développeur front-end principal. 2ème place."
-    },
-    {
-      "role": "Atelier Arduino INNOVA-DAYS",
-      "location": "ESP",
-      "period": "03/2025",
-      "description": "Programmation embarquée Arduino C/C++."
-    }
-  ],
+  "about": {
+    "paragraphs": [
+      "Développeur Full-Stack et administrateur réseaux, je couvre la chaîne technique de bout en bout : de l'infrastructure réseau et de la téléphonie IP jusqu'à l'interface web et mobile. Cette lecture système vient de ma formation en Master 1 STIC, parcours Télécommunications et Réseaux, à l'École Supérieure Polytechnique d'Antsiranana.",
+      "Côté développement, j'interviens sur le front-end (React.js, Next.js, HTML/CSS, Tailwind CSS) comme sur le back-end et les bases de données (Node.js, Express.js, Laravel, JavaScript/TypeScript, Python, PHP, MySQL, PostgreSQL, Prisma). Je complète cet ensemble par le DevOps (Docker, GitHub Actions CI/CD) et l'IA appliquée à la vision par ordinateur : YOLO et OpenCV pour la détection et l'analyse de personnes dans des flux vidéo, Bot-SORT et ReID pour le suivi multi-personnes et la ré-identification. J'ai également une pratique de l'embarqué Arduino en C/C++ et des méthodes de modélisation UML, Merise et Agile."
+    ],
+    "highlights": [
+      "Développement et déploiement de **SalonAtlas** — annuaire de salons de coiffure en Suisse (stage Mada Digital)",
+      "**2ème place au Hackathon Redshalk 2025** — MVP de plateforme touristique développé en 48h, front-end principal",
+      "**Finaliste du Hackathon ITOVIA 2026** avec le projet CoFound, en tant que CPO de l'équipe You-Ary",
+      "**Certification interne obtenue** à l'issue du stage chez Nisasarana SARLU"
+    ]
+  },
   "projects": [
     {
       "name": "SalonAtlas",
       "url": "https://salon-atlas.mada-digital.xyz/",
+      "role": "Développement et déploiement — stage Mada Digital",
       "description": "Annuaire des salons de coiffure en Suisse. Développé et déployé lors du stage chez Mada Digital.",
-      "stack": [
-        "React + Vite",
-        "TypeScript",
-        "Tailwind CSS",
-        "Laravel",
-        "PostgreSQL"
-      ]
-    },
-    {
-      "name": "Hotel Victoria GPlus",
-      "url": "https://dev-victoria.webapp-gplus.com/",
-      "description": "Maquette Figma d'une plateforme hôtelière. Réalisée lors du stage chez Mada Digital.",
-      "stack": ["Figma"]
-    },
-    {
-      "name": "Vogherra Café",
-      "url": "https://vogheracoffee.com/",
-      "description": "Tests et validation du site web. Réalisé lors du stage chez Mada Digital.",
-      "stack": ["Tests", "QA"]
+      "stack": ["React + Vite", "TypeScript", "Tailwind CSS", "Laravel", "PostgreSQL"]
     },
     {
       "name": "Skolara",
       "url": "https://skolara.vercel.app/",
+      "role": "Développement Full-Stack",
       "description": "Plateforme éducative scolaire & préscolaire : calendrier, actualités, pré-inscription, blog.",
       "stack": [
         "Next.js",
@@ -85,117 +59,333 @@
       ]
     },
     {
+      "name": "MeetSpace",
+      "url": "",
+      "role": "Développeur front-end principal — Hackathon Redshalk 2025 (2ème place)",
+      "description": "MVP de plateforme digitale dans le domaine du tourisme, développé en équipe en 48 heures lors du Hackathon Redshalk 2025.",
+      "stack": ["React", "Tailwind CSS", "Node.js", "Express Js"]
+    },
+    {
+      "name": "CoFound",
+      "url": "",
+      "role": "CPO — équipe You-Ary, programme ITOVIA 2026",
+      "description": "Projet digital conçu en équipe lors du programme entrepreneurial et Hackathon ITOVIA 2026, sélectionné pour la finale du Hackathon.",
+      "stack": []
+    },
+    {
+      "name": "Hotel Victoria GPlus",
+      "url": "https://dev-victoria.webapp-gplus.com/",
+      "role": "Conception de maquettes Figma — stage Mada Digital",
+      "description": "Maquette Figma d'une plateforme hôtelière, réalisée lors du stage chez Mada Digital.",
+      "stack": ["Figma"]
+    },
+    {
+      "name": "Vogherra Café",
+      "url": "https://vogheracoffee.com/",
+      "role": "Tests et validation — stage Mada Digital",
+      "description": "Tests et validation du site web, réalisés lors du stage chez Mada Digital.",
+      "stack": ["Tests", "QA"]
+    },
+    {
       "name": "DocuLink",
-      "url": "#",
+      "url": "",
+      "role": "Développement Full-Stack",
       "description": "Bibliothèque virtuelle pour consulter et gérer livres, mémoires et thèses.",
       "stack": ["Next.js", "Node.js", "MySQL", "API REST", "Express Js"]
     },
     {
-      "name": "MeetSpace",
-      "url": "#",
-      "description": "Projet réalisé lors du Hackathon Redshalk (2ème place). Prototype MVP développé en 48h.",
-      "stack": ["React", "Tailwind CSS", "Node.js", "Express Js"]
-    },
-    {
       "name": "CV Builder",
-      "url": "#",
-      "description": "App web de création et export de CV en PDF. Formulaires validés, composants réutilisables.",
+      "url": "",
+      "role": "Développement front-end",
+      "description": "Application web de création et d'export de CV en PDF, avec formulaires validés et composants réutilisables.",
       "stack": ["React", "TypeScript", "Tailwind CSS"]
     }
   ],
   "skills": [
     {
-      "name": "Next.js",
-      "desc": "Framework principal, App Router",
-      "icon": "IconBrandNextjs"
+      "category": "Front-End",
+      "items": [
+        {
+          "name": "React.js",
+          "desc": "Interfaces web modernes et dynamiques",
+          "icon": "IconBrandReact"
+        },
+        {
+          "name": "Next.js",
+          "desc": "Interfaces web responsives",
+          "icon": "IconBrandNextjs"
+        },
+        {
+          "name": "HTML / CSS",
+          "desc": "Intégration d'interfaces responsives",
+          "icon": "IconBrandHtml5"
+        },
+        {
+          "name": "Tailwind CSS",
+          "desc": "Styling rapide et cohérent",
+          "icon": "IconBrandTailwind"
+        }
+      ]
     },
     {
-      "name": "React.js",
-      "desc": "UI composant-driven",
-      "icon": "IconBrandReact"
+      "category": "Back-End & Langages",
+      "items": [
+        {
+          "name": "Node.js",
+          "desc": "Applications backend et API REST",
+          "icon": "IconBrandNodejs"
+        },
+        {
+          "name": "Express.js",
+          "desc": "Création d'API REST",
+          "icon": "IconApi"
+        },
+        {
+          "name": "Laravel",
+          "desc": "Applications backend",
+          "icon": "IconBrandLaravel"
+        },
+        {
+          "name": "JavaScript / TypeScript",
+          "desc": "Applications web typées",
+          "icon": "IconBrandTypescript"
+        },
+        {
+          "name": "Python",
+          "desc": "Scripts et services backend",
+          "icon": "IconBrandPython"
+        },
+        {
+          "name": "PHP",
+          "desc": "Services backend",
+          "icon": "IconBrandPhp"
+        }
+      ]
     },
     {
-      "name": "TypeScript",
-      "desc": "JavaScript robuste et typé",
-      "icon": "IconBrandTypescript"
+      "category": "Bases de données",
+      "items": [
+        {
+          "name": "MySQL",
+          "desc": "Conception et interrogation",
+          "icon": "IconBrandMysql"
+        },
+        {
+          "name": "PostgreSQL",
+          "desc": "Structuration de bases relationnelles",
+          "icon": "IconDatabase"
+        },
+        {
+          "name": "Prisma ORM",
+          "desc": "Modélisation et accès aux données",
+          "icon": "IconBrandPrisma"
+        }
+      ]
     },
     {
-      "name": "Tailwind CSS",
-      "desc": "Styling rapide et cohérent",
-      "icon": "IconBrandTailwind"
+      "category": "Réseaux & Téléphonie IP",
+      "items": [
+        {
+          "name": "Réseaux IP",
+          "desc": "Configuration et adressage IPv4",
+          "icon": "IconNetwork"
+        },
+        {
+          "name": "Routage & diagnostic",
+          "desc": "Routage de base et diagnostic de connectivité",
+          "icon": "IconRouter"
+        },
+        {
+          "name": "Téléphonie IP / VoIP",
+          "desc": "Configuration des téléphones IP et communications",
+          "icon": "IconPhoneCall"
+        }
+      ]
     },
     {
-      "name": "UI Components",
-      "desc": "Composants sur mesure et réutilisables",
-      "icon": "IconComponents"
+      "category": "DevOps",
+      "items": [
+        {
+          "name": "Docker",
+          "desc": "Conteneurisation des environnements d'exécution",
+          "icon": "IconBrandDocker"
+        },
+        {
+          "name": "GitHub Actions",
+          "desc": "Automatisation des tests, builds et CI/CD",
+          "icon": "IconBrandGithub"
+        }
+      ]
     },
     {
-      "name": "Figma",
-      "desc": "Maquettes et prototypes d'applications",
-      "icon": "IconBrandFigma"
+      "category": "IA & Computer Vision",
+      "items": [
+        {
+          "name": "YOLO",
+          "desc": "Détection de personnes dans des flux vidéo",
+          "icon": "IconScanEye"
+        },
+        {
+          "name": "OpenCV",
+          "desc": "Analyse de flux vidéo",
+          "icon": "IconEye"
+        },
+        {
+          "name": "Bot-SORT",
+          "desc": "Suivi multi-personnes",
+          "icon": "IconRoute"
+        },
+        {
+          "name": "ReID",
+          "desc": "Ré-identification dans les séquences vidéo",
+          "icon": "IconUserSearch"
+        },
+        {
+          "name": "Machine Learning",
+          "desc": "Analyse de données et IA",
+          "icon": "IconBrain"
+        }
+      ]
     },
     {
-      "name": "Node.js",
-      "desc": "APIs REST backend",
-      "icon": "IconBrandNodejs"
+      "category": "Modélisation & Méthodes",
+      "items": [
+        {
+          "name": "UML",
+          "desc": "Architecture des applications orientées objet",
+          "icon": "IconSchema"
+        },
+        {
+          "name": "Merise",
+          "desc": "Conception des données : MCD et MLD",
+          "icon": "IconSitemap"
+        },
+        {
+          "name": "Méthode Agile",
+          "desc": "Organisation du travail et collaboration",
+          "icon": "IconArrowsShuffle"
+        }
+      ]
     },
     {
-      "name": "MySQL",
-      "desc": "Base de données relationnelle",
-      "icon": "IconDatabase"
+      "category": "Embarqué",
+      "items": [
+        {
+          "name": "Arduino C/C++",
+          "desc": "Programmation embarquée et microcontrôleurs",
+          "icon": "IconCpu"
+        }
+      ]
+    }
+  ],
+  "experience": [
+    {
+      "role": "ITOVIA 2026 — Participant & CPO (équipe You-Ary)",
+      "location": "Antananarivo",
+      "period": "08/2026 – 09/2026",
+      "description": "Programme d'accompagnement entrepreneurial (Centre Amparibe, Antananarivo) : formations et ateliers sur l'entrepreneuriat, l'innovation et le développement de projets. Conception en équipe du projet digital CoFound, sélectionné pour la finale du Hackathon."
     },
     {
-      "name": "Python",
-      "desc": "Scripts et automatisation",
-      "icon": "IconBrandPython"
+      "role": "Mada Digital — Stagiaire Développeur Full-Stack",
+      "location": "Antsiranana Lazaret Nord",
+      "period": "12/2025 – 07/2026",
+      "description": "Développement et déploiement de SalonAtlas, tests de Vogherra Café et conception de maquettes Figma pour Hotel Victoria GPlus. Travail en méthode Agile, avec outils de gestion de projet, sur les phases de développement, de test et de déploiement.",
+      "link": "mada-digital.net"
     },
     {
-      "name": "Arduino C/C++",
-      "desc": "Électronique embarquée",
-      "icon": "IconCpu"
+      "role": "Association FIMAFAFI — Responsable Volleyball",
+      "location": "Antsiranana",
+      "period": "02/2025 – 02/2026",
+      "description": "Organisation et coordination des activités de volleyball : entraînements, activités sportives et coordination des membres."
     },
     {
-      "name": "UML / Merise",
-      "desc": "Modélisation applicative",
-      "icon": "IconSchema"
+      "role": "Hackathon Redshalk — Développeur Front-End",
+      "location": "Antsiranana",
+      "period": "08/2025",
+      "description": "Hackathon organisé par inCharge Madagascar et Vahatra Center : développement en équipe d'un MVP de plateforme digitale dans le domaine du tourisme, réalisé en 48 heures. Responsable principal du développement front-end — 2ème place du Hackathon."
     },
     {
-      "name": "Docker",
-      "desc": "Conteneurisation d'applications",
-      "icon": "IconBrandDocker"
-    },
-    {
-      "name": "Machine Learning",
-      "desc": "Analyse de données et IA",
-      "icon": "IconBrain"
+      "role": "Nisasarana SARLU — Stagiaire",
+      "location": "Ivato, Antananarivo",
+      "period": "10/2024 – 12/2024",
+      "description": "Développement front-end de solutions web, maintenance informatique et contribution à l'amélioration des processus internes. Certification interne obtenue à l'issue du stage."
     }
   ],
   "education": [
     {
-      "degree": "Master 1 — Mention STIC",
-      "period": "2025 – en cours",
+      "degree": "Master 1 — Sciences et Technologies de l'Information et de la Communication (STIC)",
+      "period": "02/2026 – En cours",
       "specialization": "Parcours : Télécommunications et Réseaux",
-      "school": "Ecole Supérieure Polytechnique, Antsiranana"
+      "school": "École Supérieure Polytechnique d'Antsiranana (ESP)"
     },
     {
       "degree": "Licence — Génie Électrique et Technologie",
-      "period": "2022 – 2025",
-      "specialization": "Parcours : Electronique Informatique et Technologie",
-      "school": "Ecole Supérieure Polytechnique, Antsiranana"
+      "period": "11/2022 – 09/2025",
+      "specialization": "Parcours : Électronique Informatique et Technologie",
+      "school": "École Supérieure Polytechnique d'Antsiranana (ESP)"
     },
     {
-      "degree": "Baccalauréat Série D",
+      "degree": "Licence 1 — Économie et Gestion",
+      "period": "09/2021 – 08/2022",
+      "specialization": "Initiation aux fondamentaux de l'économie, de la gestion et de l'administration",
+      "school": "Université de Fianarantsoa"
+    },
+    {
+      "degree": "Baccalauréat — Série D",
       "period": "2020",
-      "specialization": "Collège Saint Joseph, Fianarantsoa",
-      "school": ""
+      "specialization": "Baccalauréat général, série D",
+      "school": "Collège Saint Joseph Ambozontany, Fianarantsoa"
+    },
+    {
+      "degree": "Atelier Arduino INNOVA-DAYS (formation complémentaire)",
+      "period": "03/2025",
+      "specialization": "Programmation embarquée avec Arduino en C/C++, microcontrôleurs et composants électroniques",
+      "school": "Lab Vision — École Supérieure Polytechnique d'Antsiranana"
+    }
+  ],
+  "certifications": [
+    {
+      "title": "Attestation de participation — Programme ITOVIA 2026",
+      "detail": "Programme entrepreneurial & Hackathon ITOVIA",
+      "period": "08/2026 – 09/2026"
+    },
+    {
+      "title": "Attestation de stage — Mada Digital",
+      "detail": "Développeur Full-Stack",
+      "period": "12/2025 – 07/2026"
+    },
+    {
+      "title": "Attestation de Responsabilité Volleyball",
+      "detail": "Association FIMAFAFI",
+      "period": "02/2025 – 02/2026"
+    },
+    {
+      "title": "Certificat de formations et participation — Hackathon Redshalk 2025",
+      "detail": "inCharge Madagascar & Vahatra Center",
+      "period": "08/2025"
+    },
+    {
+      "title": "Certificat de formations — Atelier Arduino (INNOVA DAYS)",
+      "detail": "Lab Vision, École Supérieure Polytechnique d'Antsiranana",
+      "period": "03/2025"
+    },
+    {
+      "title": "Attestation de stage — Nisasarana SARLU",
+      "detail": "Certification interne obtenue à l'issue du stage",
+      "period": "10/2024 – 12/2024"
     }
   ],
   "contact": {
+    "email": "normanvonizara@gmail.com",
+    "phone": "+261 34 30 638 17",
+    "github": "https://github.com/normanXCat",
+    "linkedin": "https://linkedin.com/in/norman-vonizara-07b96b36a/",
+    "location": "Antsiranana 201, Madagascar",
+    "availability": "Disponible pour des missions freelance et une alternance",
     "languages": [
       { "flag": "🇲🇬", "name": "Malagasy", "level": "Natif" },
       { "flag": "🇫🇷", "name": "Français", "level": "Courant" },
       { "flag": "🇬🇧", "name": "Anglais", "level": "Intermédiaire" }
-    ],
-    "phone": "+261 34 30 638 17"
+    ]
   }
 }

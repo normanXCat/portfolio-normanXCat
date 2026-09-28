@@ -1,11 +1,13 @@
 import { promises as fs } from "fs";
 import path from "path";
+import { Nav } from "@/components/nav";
 import { Hero } from "@/components/hero";
 import { About } from "@/components/about";
 import { Projects } from "@/components/projects";
-import { Experience } from "@/components/experience";
 import { Skills } from "@/components/skills";
+import { Experience } from "@/components/experience";
 import { Education } from "@/components/education";
+import { Certifications } from "@/components/certifications";
 import { Contact } from "@/components/contact";
 import { Separator } from "@/components/separator";
 
@@ -22,17 +24,20 @@ export default async function Home() {
 
   return (
     <>
+      <Nav data={data.navigation} />
       <Hero data={data.hero} />
       <Separator />
       <About data={data.about} />
       <Separator />
       <Projects data={data.projects} />
       <Separator />
-      <Experience data={data.experience} />
-      <Separator />
       <Skills data={data.skills} />
       <Separator />
+      <Experience data={data.experience} />
+      <Separator />
       <Education data={data.education} />
+      <Separator />
+      <Certifications data={data.certifications} />
       <Separator />
       <Contact data={data.contact} />
 
