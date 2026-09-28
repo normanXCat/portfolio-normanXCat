@@ -16,7 +16,7 @@ type ContactData = {
  */
 export function Contact({ data }: { data: ContactData }) {
   return (
-    <FadeIn as="footer" id="contact" className="scroll-mt-24">
+    <FadeIn as="footer" id="contact" className="scroll-mt-24 max-w-[740px] mx-auto">
       <h2 className="text-xs font-medium uppercase tracking-[0.2em] text-muted mb-6">
         Contact
       </h2>
