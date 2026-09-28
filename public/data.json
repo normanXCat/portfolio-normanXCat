@@ -14,49 +14,55 @@
   "about": "Développeur Full-Stack avec une base en Télécoms et Réseaux, à l'aise de l'infrastructure à l'interface, avec une appétence pour l'IA (vision par ordinateur) et le DevOps. Actuellement en Master 1 STIC, parcours Télécommunications et Réseaux, à l'ESP Antsiranana.",
   "projects": [
     {
-      "name": "Skolara",
-      "url": "https://skolara.vercel.app/",
-      "description": "Plateforme éducative pour écoles et structures préscolaires : actualités, calendrier, blog et pré-inscription en ligne.",
-      "stack": ["Next.js", "TypeScript", "Tailwind CSS", "Express", "Prisma", "PostgreSQL"]
+      "name": "CoFound.mg",
+      "url": "https://co-found-mg.vercel.app/",
+      "context": "Programme ITOVIA 2026 · 08/2026 – 09/2026",
+      "description": "Plateforme de mise en relation d'étudiants de formations différentes pour co-fonder des startups à Madagascar. Sélectionnée pour la finale du hackathon ITOVIA 2026.",
+      "stack": ["React", "Vite", "TypeScript", "Tailwind CSS", "NestJS", "Prisma", "PostgreSQL"]
+    },
+    {
+      "name": "SalonAtlas",
+      "url": "https://salon-atlas.mada-digital.xyz/",
+      "context": "Stage Mada Digital · 12/2025 – 07/2026",
+      "description": "Annuaire des salons de coiffure en Suisse, développé et déployé lors de mon stage chez Mada Digital.",
+      "stack": ["React", "Vite", "TypeScript", "Tailwind CSS", "Laravel", "PostgreSQL"]
+    },
+    {
+      "name": "Hotel Victoria GPlus",
+      "url": "https://dev-victoria.webapp-gplus.com/",
+      "context": "Stage Mada Digital · 12/2025 – 07/2026",
+      "description": "Conception des maquettes Figma d'une plateforme hôtelière, réalisée lors de mon stage chez Mada Digital.",
+      "stack": ["Figma"]
+    },
+    {
+      "name": "Comptage de personnes en temps réel",
+      "url": "https://github.com/normanXCat/realtime-people-counting",
+      "context": "Master STIC · Vision par ordinateur",
+      "description": "Système de vision par ordinateur qui détecte, suit et ré-identifie des personnes dans un flux vidéo pour en assurer le comptage.",
+      "stack": ["Python", "YOLO", "OpenCV", "Bot-SORT", "ReID"]
     },
     {
       "name": "DiégoInfo",
       "url": null,
       "private": true,
+      "context": "Projet personnel · Antsiranana",
       "description": "Application mobile citoyenne pour les habitants d'Antsiranana : alertes en temps réel (coupures JIRAMA, météo, incidents), annuaire des services locaux et signalements citoyens.",
       "stack": ["Expo / React Native", "NestJS", "Prisma", "PostgreSQL", "Firebase", "SQLite"]
     },
     {
-      "name": "SalonAtlas",
-      "url": "https://salon-atlas.mada-digital.xyz/",
-      "description": "Annuaire des salons de coiffure en Suisse, développé et déployé lors de mon stage chez Mada Digital.",
-      "stack": ["React", "Vite", "TypeScript", "Tailwind CSS", "Laravel", "PostgreSQL"]
-    },
-    {
-      "name": "CoFound.mg",
-      "url": "https://co-found-mg.vercel.app/",
-      "description": "Plateforme de mise en relation d'étudiants de formations différentes pour co-fonder des startups à Madagascar. Sélectionnée pour la finale du hackathon ITOVIA 2026.",
-      "stack": ["React", "Vite", "TypeScript", "Tailwind CSS", "NestJS", "Prisma", "PostgreSQL"]
-    },
-    {
-      "name": "Comptage de personnes en temps réel",
-      "url": "https://github.com/normanXCat/realtime-people-counting",
-      "description": "Système de vision par ordinateur qui détecte, suit et ré-identifie des personnes dans un flux vidéo pour en assurer le comptage.",
-      "stack": ["Python", "YOLO", "OpenCV", "Bot-SORT", "ReID"]
-    },
-    {
-      "name": "Hotel Victoria GPlus",
-      "url": "https://dev-victoria.webapp-gplus.com/",
-      "description": "Conception des maquettes Figma d'une plateforme hôtelière, réalisée lors de mon stage chez Mada Digital.",
-      "stack": ["Figma"]
+      "name": "Skolara",
+      "url": "https://skolara.vercel.app/",
+      "context": "Projet personnel · Éducation",
+      "description": "Plateforme éducative pour écoles et structures préscolaires : actualités, calendrier, blog et pré-inscription en ligne.",
+      "stack": ["Next.js", "TypeScript", "Tailwind CSS", "Express", "Prisma", "PostgreSQL"]
     }
   ],
   "skills": {
-    "Front-End": "React, Next.js, React Native (Expo), TypeScript, Tailwind CSS",
-    "Back-End": "Node.js, Express, NestJS, Laravel, PHP, Python",
-    "Données": "PostgreSQL, MySQL, Prisma",
-    "Réseaux & DevOps": "IPv4/routage, VoIP, Docker, GitHub Actions",
-    "IA & Embarqué": "YOLO, OpenCV, Bot-SORT, ReID, Arduino (C/C++)"
+    "Front-End": ["React", "Next.js", "React Native (Expo)", "TypeScript", "Tailwind CSS"],
+    "Back-End": ["Node.js", "Express", "NestJS", "Laravel", "PHP", "Python"],
+    "Données": ["PostgreSQL", "MySQL", "Prisma"],
+    "Réseaux & DevOps": ["IPv4/routage", "VoIP", "Docker", "GitHub Actions"],
+    "IA & Embarqué": ["YOLO", "OpenCV", "Bot-SORT", "ReID", "Arduino (C/C++)"]
   },
   "parcours": {
     "experience": [
