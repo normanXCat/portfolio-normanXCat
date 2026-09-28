@@ -21,11 +21,12 @@ type ExperienceData = {
 export function Experience({ data }: { data: ExperienceData[] }) {
   return (
     <motion.section
+      id="experience"
       initial={{ opacity: 0, y: 16 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: 0.3 }}
-      className="mb-16"
+      className="mb-16 scroll-mt-24"
     >
       <h2 className="text-2xl font-bold mb-8 text-foreground">Expérience</h2>
       <div className="space-y-10">

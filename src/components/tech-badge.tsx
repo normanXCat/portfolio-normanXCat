@@ -12,6 +12,7 @@ import {
   IconBrandVite,
   IconBrandMysql,
   IconBrandDocker,
+  IconBrandFigma,
   IconBrain,
 } from "@tabler/icons-react";
 
@@ -29,6 +30,7 @@ const techIcons: Record<string, React.ElementType> = {
   Laravel: IconBrandLaravel,
   Prisma: IconBrandPrisma,
   Docker: IconBrandDocker,
+  Figma: IconBrandFigma,
   "Machine Learning": IconBrain,
 };
 

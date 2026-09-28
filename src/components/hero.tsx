@@ -1,8 +1,10 @@
 "use client";
 
 import {
+  IconArrowDown,
   IconBrandGithub,
   IconBrandLinkedin,
+  IconDownload,
   IconMail,
 } from "@tabler/icons-react";
 import { motion } from "framer-motion";
@@ -25,6 +27,11 @@ type HeroData = {
   title: string;
   bio: string;
   location: string;
+  cta: {
+    projects: string;
+    resume: string;
+    resumeUrl: string;
+  };
   links: {
     github: string;
     linkedin: string;
@@ -81,6 +88,24 @@ export function Hero({ data }: { data: HeroData }) {
       <p className="text-muted max-w-lg leading-relaxed text-lg mt-2">
         {data.bio}
       </p>
+
+      <div className="flex flex-wrap gap-3 mt-2">
+        <a
+          href="#projets"
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-bold bg-foreground text-background hover:opacity-90 transition-opacity"
+        >
+          <IconArrowDown size={18} stroke={1.5} />
+          {data.cta.projects}
+        </a>
+        <a
+          href={data.cta.resumeUrl}
+          download
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium text-foreground border border-border bg-zinc-500/5 dark:bg-white/5 hover:border-zinc-400 dark:hover:border-zinc-700 hover:bg-zinc-500/10 dark:hover:bg-white/10 transition-all"
+        >
+          <IconDownload size={18} stroke={1.5} />
+          {data.cta.resume}
+        </a>
+      </div>
 
       <div className="flex gap-5 mt-2">
         <a
