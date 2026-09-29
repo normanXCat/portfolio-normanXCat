@@ -6,6 +6,7 @@ import { Projects } from "@/components/projects";
 import { Gallery } from "@/components/gallery";
 import { Skills } from "@/components/skills";
 import { Parcours } from "@/components/parcours";
+import { Certifications } from "@/components/certifications";
 import { Contact } from "@/components/contact";
 
 type GalleryImage = {
@@ -71,6 +72,9 @@ export default async function Home() {
       {galleryImages.length > 0 && <Gallery images={galleryImages} />}
       <Skills data={data.skills} />
       <Parcours data={data.parcours} />
+      {data.certifications && data.certifications.length > 0 && (
+        <Certifications data={data.certifications} />
+      )}
       <Contact data={data.contact} />
     </>
   );

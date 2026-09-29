@@ -100,6 +100,57 @@
       }
     ]
   },
+  "certifications": [
+    {
+      "title": "AWS Networking Basics",
+      "issuer": "Amazon Web Services (AWS), via FutureLearn",
+      "date": "Septembre 2026",
+      "description": "Fondamentaux des réseaux AWS, services réseau, concepts et protocoles, performance, coût et disponibilité.",
+      "url": null
+    },
+    {
+      "title": "Attestation de participation — Programme ITOVIA 2026",
+      "issuer": "CEENTRE Amparibe, Antananarivo",
+      "date": "2026",
+      "description": null,
+      "url": null
+    },
+    {
+      "title": "Certificat de formation — Atelier Arduino (INNOVA-DAYS)",
+      "issuer": "Lab Vision, École Supérieure Polytechnique d'Antsiranana",
+      "date": "03/2025",
+      "description": "Atelier pratique sur la programmation embarquée Arduino en C/C++.",
+      "url": null
+    },
+    {
+      "title": "Certificat de participation — Hackathon Redshalk 2025",
+      "issuer": "inCharge Madagascar et Vahatra Center",
+      "date": "08/2025",
+      "description": "Développement en équipe d'un MVP de plateforme digitale dans le domaine du tourisme, réalisé en 48 heures. 2ᵉ place.",
+      "url": null
+    },
+    {
+      "title": "Attestation de stage — Mada Digital",
+      "issuer": "Mada Digital, Antsiranana",
+      "date": "12/2025 – 07/2026",
+      "description": null,
+      "url": null
+    },
+    {
+      "title": "Attestation de stage — Nisasarana SARLU",
+      "issuer": "Nisasarana SARLU, Antananarivo",
+      "date": "10/2024 – 12/2024",
+      "description": null,
+      "url": null
+    },
+    {
+      "title": "Attestation de responsabilité — Volleyball, Association FIMAFAFI",
+      "issuer": "Association FIMAFAFI, Antsiranana",
+      "date": "02/2025 – 02/2026",
+      "description": null,
+      "url": null
+    }
+  ],
   "contact": {
     "email": "normanvonizara@gmail.com",
     "phone": "+261 34 30 638 17",
