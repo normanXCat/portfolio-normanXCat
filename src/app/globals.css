@@ -214,6 +214,77 @@ body {
   opacity: 0.045;
 }
 
+/* ── Photo de profil : anneau tournant & bulles flottantes ── */
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes float-bubble-1 {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(3px, -7px, 0); }
+}
+
+@keyframes float-bubble-2 {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(-5px, 6px, 0); }
+}
+
+@keyframes float-bubble-3 {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(-4px, -5px, 0); }
+}
+
+@keyframes float-bubble-4 {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(4px, 5px, 0); }
+}
+
+@keyframes float-bubble-5 {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(-3px, 4px, 0); }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 28s linear infinite;
+}
+
+.animate-float-1 {
+  animation: float-bubble-1 6s ease-in-out infinite;
+}
+
+.animate-float-2 {
+  animation: float-bubble-2 7.2s ease-in-out infinite;
+}
+
+.animate-float-3 {
+  animation: float-bubble-3 5.2s ease-in-out infinite;
+}
+
+.animate-float-4 {
+  animation: float-bubble-4 6.6s ease-in-out infinite;
+}
+
+.animate-float-5 {
+  animation: float-bubble-5 4.8s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-spin-slow,
+  .animate-float-1,
+  .animate-float-2,
+  .animate-float-3,
+  .animate-float-4,
+  .animate-float-5 {
+    animation: none !important;
+  }
+}
+
 /* ── Lightbox ── */
 
 .lightbox-overlay {
