@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useState, useRef, useCallback } from "react";
 import { useReducedMotion } from "framer-motion";
 import { FadeIn } from "./fade-in";
-import { IconFileText, IconExternalLink } from "@tabler/icons-react";
+import { IconFileText, IconExternalLink, IconAward } from "@tabler/icons-react";
 
 export type CertificateItem = {
   pdfUrl: string;
@@ -19,8 +19,8 @@ export type CertificateItem = {
 
 /**
  * Carte de certificat unitaire avec effet de bascule 3D (tilt) au survol,
- * panneau d'informations en surimpression floutée (backdrop-blur)
- * et bascule au tap sur mobile / tactile.
+ * liseré décoratif intérieur façon diplôme, badge de sceau d'attestation,
+ * reflet lumineux (glare) subtil et panneau d'informations en surimpression floutée.
  */
 function CertificateCard({
   cert,
@@ -32,6 +32,7 @@ function CertificateCard({
   const cardRef = useRef<HTMLDivElement>(null);
   const [rotateX, setRotateX] = useState(0);
   const [rotateY, setRotateY] = useState(0);
+  const [glarePos, setGlarePos] = useState({ x: 50, y: 50 });
   const [isHovered, setIsHovered] = useState(false);
   const [isOpenMobile, setIsOpenMobile] = useState(false);
   const shouldReduceMotion = useReducedMotion();
@@ -44,9 +45,14 @@ function CertificateCard({
       const rect = card.getBoundingClientRect();
       const x = (e.clientX - rect.left) / rect.width - 0.5;
       const y = (e.clientY - rect.top) / rect.height - 0.5;
-      // Rotation légère (max ~8-9°) pour rester élégant
+      // Rotation légère (max ~8-9°) pour préserver l'élégance
       setRotateY(x * 16);
       setRotateX(-y * 16);
+
+      // Calcul de la position du reflet lumineux
+      const px = ((e.clientX - rect.left) / rect.width) * 100;
+      const py = ((e.clientY - rect.top) / rect.height) * 100;
+      setGlarePos({ x: Math.round(px), y: Math.round(py) });
     },
     [shouldReduceMotion]
   );
@@ -59,6 +65,7 @@ function CertificateCard({
     setIsHovered(false);
     setRotateX(0);
     setRotateY(0);
+    setGlarePos({ x: 50, y: 50 });
   }, []);
 
   const handleToggleMobile = useCallback(() => {
@@ -103,21 +110,49 @@ function CertificateCard({
               ? "transform 0.12s ease-out, box-shadow 0.25s ease"
               : "transform 0.4s ease-out, box-shadow 0.3s ease",
           }}
-          className="relative w-full aspect-[4/3] sm:aspect-[1/1.25] rounded-xl overflow-hidden bg-card-bg/60 border border-border/70 shadow-xs hover:shadow-lg hover:border-accent/40 cursor-pointer focus-visible:outline-2 focus-visible:outline-accent select-none group"
+          className="relative w-full aspect-[4/3] sm:aspect-[1/1.25] rounded-xl overflow-hidden bg-card-bg/75 border border-border/80 shadow-md shadow-foreground/[0.03] dark:shadow-black/25 hover:shadow-2xl hover:shadow-accent/15 dark:hover:shadow-black/50 hover:border-accent/50 cursor-pointer focus-visible:outline-2 focus-visible:outline-accent select-none group"
         >
-          {/* Vignette de la première page du PDF */}
+          {/* Badge de sceau permanent dans le coin supérieur */}
+          <div
+            aria-hidden="true"
+            className="absolute top-2.5 right-2.5 z-10 w-7 h-7 rounded-full bg-background/85 dark:bg-card-bg/90 backdrop-blur-md border border-border/80 text-accent flex items-center justify-center shadow-xs transition-transform duration-300 group-hover:scale-110 group-hover:border-accent/60"
+            title="Certificat"
+          >
+            <IconAward size={15} strokeWidth={2} />
+          </div>
+
+          {/* Vignette de la première page du PDF avec cadre décoratif façon diplôme */}
           <div className="relative w-full h-full p-2.5 sm:p-3 flex items-center justify-center bg-card-bg/40">
-            <div className="relative w-full h-full rounded-lg overflow-hidden shadow-xs">
-              <Image
-                src={cert.thumbnailUrl}
-                alt={`Certificat ${cert.title}`}
-                fill
-                sizes="(max-width: 640px) 100vw, 360px"
-                className="object-contain"
-                priority={index === 0}
+            <div className="relative w-full h-full rounded-lg overflow-hidden p-1.5 border border-border/60 bg-background/50 dark:bg-card-bg/50 shadow-inner">
+              {/* Liseré fin intérieur décoratif */}
+              <div
+                aria-hidden="true"
+                className="absolute inset-1 rounded-[6px] border border-border/40 dark:border-border/60 pointer-events-none z-1"
               />
+
+              <div className="relative w-full h-full rounded-[4px] overflow-hidden">
+                <Image
+                  src={cert.thumbnailUrl}
+                  alt={`Certificat ${cert.title}`}
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 340px"
+                  className="object-contain"
+                  priority={index === 0}
+                />
+              </div>
             </div>
           </div>
+
+          {/* Reflet lumineux subtil suivant le curseur */}
+          {!shouldReduceMotion && isHovered && (
+            <div
+              aria-hidden="true"
+              className="absolute inset-0 pointer-events-none z-10 transition-opacity duration-200"
+              style={{
+                background: `radial-gradient(circle 240px at ${glarePos.x}% ${glarePos.y}%, color-mix(in srgb, var(--accent) 18%, transparent), transparent 70%)`,
+              }}
+            />
+          )}
 
           {/* Panneau d'informations en surimpression (flou + fondu 3D) */}
           <div
@@ -129,7 +164,7 @@ function CertificateCard({
               transition:
                 "opacity 0.25s ease, transform 0.3s cubic-bezier(0.16, 1, 0.3, 1)",
             }}
-            className={`absolute inset-0 p-5 sm:p-6 flex flex-col justify-between bg-background/90 dark:bg-card-bg/92 backdrop-blur-md border border-border/60 rounded-xl transition-opacity duration-250 ${
+            className={`absolute inset-0 p-5 sm:p-6 flex flex-col justify-between bg-background/92 dark:bg-card-bg/94 backdrop-blur-md border border-border/70 rounded-xl z-20 transition-opacity duration-250 ${
               isOverlayActive
                 ? "opacity-100 pointer-events-auto"
                 : "opacity-0 pointer-events-none"
@@ -174,7 +209,7 @@ function CertificateCard({
                 href={cert.pdfUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-medium bg-accent text-background hover:bg-accent/90 transition-colors"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-medium bg-accent text-background hover:bg-accent/90 transition-colors shadow-xs"
               >
                 <IconFileText size={14} aria-hidden="true" />
                 <span>Ouvrir le PDF</span>
@@ -201,8 +236,8 @@ function CertificateCard({
 }
 
 /**
- * Section Certifications & Attestations — vignettes avec effet 3D tilt au survol
- * et panneau d'informations en surimpression.
+ * Section Certifications & Attestations — grille en 3 colonnes desktop,
+ * vignettes 3D décorées avec liseré intérieur, sceau permanent et survol interactif.
  */
 export function Certificates({ data }: { data: CertificateItem[] }) {
   if (!data || data.length === 0) return null;
@@ -210,14 +245,14 @@ export function Certificates({ data }: { data: CertificateItem[] }) {
   return (
     <section
       id="certifications"
-      className="mb-20 md:mb-28 scroll-mt-24 max-w-[740px] mx-auto w-full"
+      className="mb-20 md:mb-28 scroll-mt-24 max-w-[1040px] mx-auto w-full"
     >
       <h2 className="text-xs font-medium uppercase tracking-[0.2em] text-muted mb-8 text-center md:text-left">
         Certifications
       </h2>
 
-      {/* Grille 2 colonnes sur tablette/desktop, 1 colonne sur mobile */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8">
+      {/* Grille 3 colonnes sur desktop (>= 1024px), 2 sur tablette, 1 sur mobile */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
         {data.map((cert, index) => (
           <CertificateCard
             key={cert.pdfUrl}
