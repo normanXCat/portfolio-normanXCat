@@ -219,7 +219,7 @@ export function Skills({ data }: { data: Record<string, string[]> }) {
   return (
     <section
       id="competences"
-      className="mb-20 md:mb-28 scroll-mt-24 max-w-[1040px] mx-auto w-full"
+      className="mb-20 md:mb-28 scroll-mt-24 max-w-[880px] mx-auto w-full"
     >
       <FadeIn>
         <h2 className="text-xs font-medium uppercase tracking-[0.2em] text-muted mb-8 text-center md:text-left">
@@ -228,7 +228,7 @@ export function Skills({ data }: { data: Record<string, string[]> }) {
       </FadeIn>
 
       {/* Mosaïque Bento Grid : 6 unités desktop, 2 unités tablette, 1 colonne mobile avec flux dense */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-6 md:gap-8 [grid-auto-flow:dense]">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-4 sm:gap-5 md:gap-6 [grid-auto-flow:dense]">
         {categories.map(([category, items], catIndex) => {
           const spanClass = getSkillBentoSpan(items.length, allCounts, catIndex);
 
@@ -238,21 +238,21 @@ export function Skills({ data }: { data: Record<string, string[]> }) {
               delay={catIndex * 0.05}
               className={`h-full ${spanClass}`}
             >
-              <div className="h-full flex flex-col justify-start p-5 sm:p-6 rounded-xl border border-border/75 bg-card-bg/40 hover:border-border hover:bg-card-bg/60 transition-colors shadow-xs">
+              <div className="h-full flex flex-col justify-start p-4 sm:p-5 rounded-xl border border-border/75 bg-card-bg/40 hover:border-border hover:bg-card-bg/60 transition-colors shadow-xs">
                 {/* Titre de catégorie avec icône */}
-                <div className="flex items-center gap-2 text-foreground font-medium text-sm mb-4 pb-2.5 border-b border-border/50">
+                <div className="flex items-center gap-2 text-foreground font-medium text-sm mb-3.5 pb-2 border-b border-border/50">
                   {getCategoryIcon(category)}
                   <span>{category}</span>
                 </div>
 
                 {/* Pastilles de technologies */}
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-1.5 sm:gap-2">
                   {items.map((tech) => {
                     const icon = getTechIcon(tech);
                     return (
                       <span
                         key={tech}
-                        className="group inline-flex items-center gap-1.5 px-3 py-1 text-xs rounded-lg border border-border bg-card-bg/70 text-foreground/85 hover:text-accent hover:border-accent/40 hover:bg-card-bg transition-colors cursor-default"
+                        className="group inline-flex items-center gap-1.5 px-2.5 py-1 text-xs rounded-lg border border-border bg-card-bg/70 text-foreground/85 hover:text-accent hover:border-accent/40 hover:bg-card-bg transition-colors cursor-default"
                       >
                         {icon && (
                           <span className="text-muted group-hover:text-accent transition-colors flex items-center">
