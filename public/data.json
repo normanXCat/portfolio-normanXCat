@@ -2,7 +2,7 @@
   "hero": {
     "name": "Norman Vonizara",
     "title": "Développeur Full-Stack & Réseaux | Télécommunications, IA & DevOps",
-    "tagline": "Je conçois des applications complètes, de l'infrastructure réseau à l'interface, avec une touche d'IA.",
+    "tagline": "Développeur Full-Stack qui conçoit des solutions digitales robustes, pensées comme un ingénieur, de l'infrastructure à l'expérience utilisateur.",
     "location": "Antsiranana, Madagascar",
     "resumeUrl": "/curriculum_vitae_normaXCat.pdf",
     "links": {
@@ -12,6 +12,23 @@
     }
   },
   "about": "Développeur Full-Stack avec une base en Télécoms et Réseaux, à l'aise de l'infrastructure à l'interface, avec une appétence pour l'IA (vision par ordinateur) et le DevOps. Actuellement en Master 1 STIC, parcours Télécommunications et Réseaux, à l'ESP Antsiranana.",
+  "approach": [
+    {
+      "icon": "target",
+      "title": "Résolution de problèmes",
+      "description": "Avant de coder, je cherche à comprendre le vrai problème à résoudre, pas seulement la fonctionnalité demandée."
+    },
+    {
+      "icon": "rocket",
+      "title": "De l'idée à la solution",
+      "description": "Je transforme une idée, même floue au départ, en un produit digital concret, testé et déployé."
+    },
+    {
+      "icon": "settings",
+      "title": "Rigueur d'ingénieur",
+      "description": "Ma formation en réseaux et télécommunications m'a appris à concevoir des systèmes fiables, structurés et pensés pour durer."
+    }
+  ],
   "projects": [
     {
       "name": "CoFound.mg",
