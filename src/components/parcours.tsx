@@ -149,7 +149,7 @@ export function Parcours({ data }: { data: ParcoursData }) {
 
       {/* Mention discrète vers le CV */}
       <div className="mt-8 pt-4 border-t border-border/50 flex items-center justify-between flex-wrap gap-2 text-xs text-muted/70 italic">
-        <span>Attestations et détails complets disponibles dans mon CV.</span>
+        <span>Attestations et détails complets disponibles dans le CV.</span>
         <a
           href="/curriculum_vitae_normaXCat.pdf"
           download

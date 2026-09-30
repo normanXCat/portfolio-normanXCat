@@ -42,7 +42,7 @@ function formatPillarText(text: string) {
 }
 
 /**
- * Section "Ma façon de travailler" — respiration éditoriale et immersive.
+ * Section "Façon de travailler" — respiration éditoriale et immersive.
  * 
  * Conception :
  * - Grand titre signature en typographie Cormorant Garamond
@@ -104,7 +104,7 @@ export function Approach({ data }: { data: ApproachData }) {
           className="max-w-2xl"
         >
           <p className="text-xs font-mono uppercase tracking-[0.25em] text-accent font-medium mb-3">
-            {data.label || "Ma façon de travailler"}
+            {data.label || "Façon de travailler"}
           </p>
 
           <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-light text-foreground tracking-tight leading-[1.15]">

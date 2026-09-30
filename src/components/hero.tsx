@@ -147,7 +147,7 @@ export function Hero({ data }: { data: HeroData }) {
               download
               className="link-underline text-accent"
             >
-              Télécharger mon CV
+              Télécharger le CV
             </a>
           </nav>
 
@@ -157,7 +157,7 @@ export function Hero({ data }: { data: HeroData }) {
               href="#projets"
               className="text-sm text-muted hover:text-foreground transition-colors"
             >
-              ↓ Voir mes projets
+              ↓ Voir les projets
             </a>
           </div>
         </div>
