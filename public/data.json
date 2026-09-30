@@ -12,23 +12,6 @@
     }
   },
   "about": "Développeur Full-Stack avec une base en Télécoms et Réseaux, à l'aise de l'infrastructure à l'interface, avec une appétence pour l'IA (vision par ordinateur) et le DevOps. Actuellement en Master 1 STIC, parcours Télécommunications et Réseaux, à l'ESP Antsiranana.",
-  "approach": [
-    {
-      "icon": "target",
-      "title": "Résolution de problèmes",
-      "description": "Avant de coder, je cherche à comprendre le vrai problème à résoudre, pas seulement la fonctionnalité demandée."
-    },
-    {
-      "icon": "rocket",
-      "title": "De l'idée à la solution",
-      "description": "Je transforme une idée, même floue au départ, en un produit digital concret, testé et déployé."
-    },
-    {
-      "icon": "settings",
-      "title": "Rigueur d'ingénieur",
-      "description": "Ma formation en réseaux et télécommunications m'a appris à concevoir des systèmes fiables, structurés et pensés pour durer."
-    }
-  ],
   "projects": [
     {
       "name": "CoFound.mg",
@@ -74,6 +57,27 @@
       "stack": ["Next.js", "TypeScript", "Tailwind CSS", "Express", "Prisma", "PostgreSQL"]
     }
   ],
+  "approach": {
+    "label": "Ma façon de travailler",
+    "headline": "Résoudre, concevoir, construire.",
+    "pillars": [
+      {
+        "number": "01",
+        "title": "Résolution de problèmes",
+        "description": "Avant de coder, je cherche à comprendre le vrai problème à résoudre, pas seulement la fonctionnalité demandée."
+      },
+      {
+        "number": "02",
+        "title": "De l'idée à la solution",
+        "description": "Je transforme une idée, même floue au départ, en un produit digital concret, testé et déployé."
+      },
+      {
+        "number": "03",
+        "title": "Rigueur d'ingénieur",
+        "description": "Ma formation en réseaux et télécommunications m'a appris à concevoir des systèmes fiables, structurés et pensés pour durer."
+      }
+    ]
+  },
   "skills": {
     "Front-End": ["React", "Next.js", "React Native (Expo)", "TypeScript", "Tailwind CSS"],
     "Back-End": ["Node.js", "Express", "NestJS", "Laravel", "PHP", "Python"],
