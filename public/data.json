@@ -62,7 +62,14 @@
     "Back-End": ["Node.js", "Express", "NestJS", "Laravel", "PHP", "Python"],
     "Données": ["PostgreSQL", "MySQL", "Prisma"],
     "Réseaux & DevOps": ["IPv4/routage", "VoIP", "Docker", "GitHub Actions"],
-    "IA & Embarqué": ["YOLO", "OpenCV", "Bot-SORT", "ReID", "Arduino (C/C++)"]
+    "IA & Embarqué": ["YOLO", "OpenCV", "Bot-SORT", "ReID", "Arduino (C/C++)"],
+    "IA & Ingénierie agentique": [
+      "Agentic Engineering",
+      "Spec Kit",
+      "Claude",
+      "Antigravity",
+      "Freebuff"
+    ]
   },
   "parcours": {
     "experience": [
