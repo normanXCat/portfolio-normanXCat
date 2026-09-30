@@ -1,0 +1,17 @@
+{
+  "aws-networking-basics.pdf": {
+    "title": "AWS Networking Basics",
+    "issuer": "Amazon Web Services (AWS), via FutureLearn",
+    "date": "Émis le 29 septembre 2026",
+    "description": "Fondamentaux des réseaux AWS — services réseau, concepts et protocoles, équilibre entre performance, coût et disponibilité.",
+    "verificationUrl": "https://futurelearn.com/certificates/tqzjlyh"
+  },
+  "machine-learning-python.pdf": {
+    "title": "Machine Learning Using Python",
+    "issuer": null,
+    "date": "30 septembre 2026",
+    "code": "10813504",
+    "description": null,
+    "verificationUrl": null
+  }
+}
