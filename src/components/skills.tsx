@@ -177,7 +177,7 @@ function getCategoryIcon(category: string): ReactNode {
 }
 
 /**
- * Section Compétences — 6 catégories avec icônes de section discrètes,
+ * Section Compétences — grille responsive 3 colonnes de blocs sobres par catégorie,
  * chaque compétence présentée en pastille stylée avec son icône de marque
  * monochrome réactive au survol.
  */
@@ -185,46 +185,54 @@ export function Skills({ data }: { data: Record<string, string[]> }) {
   const categories = Object.entries(data);
 
   return (
-    <FadeIn as="section" id="competences" className="mb-20 md:mb-28 scroll-mt-24 max-w-[740px] mx-auto">
-      <h2 className="text-xs font-medium uppercase tracking-[0.2em] text-muted mb-8">
-        Compétences
-      </h2>
+    <section
+      id="competences"
+      className="mb-20 md:mb-28 scroll-mt-24 max-w-[1040px] mx-auto w-full"
+    >
+      <FadeIn>
+        <h2 className="text-xs font-medium uppercase tracking-[0.2em] text-muted mb-8 text-center md:text-left">
+          Compétences
+        </h2>
+      </FadeIn>
 
-      <div className="space-y-6">
+      {/* Grille 3 colonnes sur desktop (>= 1024px), 2 sur tablette, 1 sur mobile */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
         {categories.map(([category, items], catIndex) => (
           <FadeIn
             key={category}
-            delay={catIndex * 0.06}
-            className="flex flex-col sm:flex-row sm:items-baseline gap-3 sm:gap-6 pb-6 border-b border-border/70 last:border-b-0 last:pb-0"
+            delay={catIndex * 0.05}
+            className="h-full"
           >
-            {/* Titre de catégorie avec icône */}
-            <div className="flex items-center gap-2 sm:min-w-[170px] sm:shrink-0 text-foreground font-medium text-sm">
-              {getCategoryIcon(category)}
-              <span>{category}</span>
-            </div>
+            <div className="h-full flex flex-col p-5 sm:p-6 rounded-xl border border-border/75 bg-card-bg/40 hover:border-border hover:bg-card-bg/60 transition-colors shadow-xs">
+              {/* Titre de catégorie avec icône */}
+              <div className="flex items-center gap-2 text-foreground font-medium text-sm mb-4 pb-2.5 border-b border-border/50">
+                {getCategoryIcon(category)}
+                <span>{category}</span>
+              </div>
 
-            {/* Pastilles avec icônes de marque */}
-            <div className="flex flex-wrap gap-2">
-              {items.map((tech) => {
-                const icon = getTechIcon(tech);
-                return (
-                  <span
-                    key={tech}
-                    className="group inline-flex items-center gap-1.5 px-3 py-1 text-xs rounded-lg border border-border bg-card-bg/60 text-foreground/85 hover:text-accent hover:border-accent/40 hover:bg-card-bg transition-colors cursor-default"
-                  >
-                    {icon && (
-                      <span className="text-muted group-hover:text-accent transition-colors flex items-center">
-                        {icon}
-                      </span>
-                    )}
-                    <span className="font-medium tracking-tight">{tech}</span>
-                  </span>
-                );
-              })}
+              {/* Pastilles de technologies */}
+              <div className="flex flex-wrap gap-2">
+                {items.map((tech) => {
+                  const icon = getTechIcon(tech);
+                  return (
+                    <span
+                      key={tech}
+                      className="group inline-flex items-center gap-1.5 px-3 py-1 text-xs rounded-lg border border-border bg-card-bg/70 text-foreground/85 hover:text-accent hover:border-accent/40 hover:bg-card-bg transition-colors cursor-default"
+                    >
+                      {icon && (
+                        <span className="text-muted group-hover:text-accent transition-colors flex items-center">
+                          {icon}
+                        </span>
+                      )}
+                      <span className="font-medium tracking-tight">{tech}</span>
+                    </span>
+                  );
+                })}
+              </div>
             </div>
           </FadeIn>
         ))}
       </div>
-    </FadeIn>
+    </section>
   );
 }
