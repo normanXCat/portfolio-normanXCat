@@ -24,12 +24,12 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://norman-x-cat.vercel.app"),
 
   title: {
-    default: "Norman Vonizara — Développeur Full-Stack",
+    default: "Norman Vonizara — Ingénierie Logicielle & Réseaux",
     template: "%s | Norman Vonizara",
   },
 
   description:
-    "Portfolio de Norman Vonizara — Développeur Full-Stack & Réseaux, Télécommunications, IA & DevOps. Master 1 STIC — ESP Antsiranana.",
+    "Portfolio de Norman Vonizara — Ingénierie logicielle & Réseaux, Télécommunications, IA & DevOps. Master 1 STIC — ESP Antsiranana.",
 
   authors: [
     { name: "Norman Vonizara", url: "https://norman-x-cat.vercel.app" },
@@ -41,16 +41,16 @@ export const metadata: Metadata = {
     locale: "fr_FR",
     url: "https://norman-x-cat.vercel.app",
     siteName: "Norman Vonizara",
-    title: "Norman Vonizara — Développeur Full-Stack",
+    title: "Norman Vonizara — Ingénierie Logicielle & Réseaux",
     description:
-      "Portfolio de Norman Vonizara — Développeur Full-Stack & Réseaux, Télécommunications, IA & DevOps.",
+      "Portfolio de Norman Vonizara — Ingénierie logicielle & Réseaux, Télécommunications, IA & DevOps.",
   },
 
   twitter: {
     card: "summary",
-    title: "Norman Vonizara — Développeur Full-Stack",
+    title: "Norman Vonizara — Ingénierie Logicielle & Réseaux",
     description:
-      "Portfolio de Norman Vonizara — Développeur Full-Stack & Réseaux, Télécommunications, IA & DevOps.",
+      "Portfolio de Norman Vonizara — Ingénierie logicielle & Réseaux, Télécommunications, IA & DevOps.",
   },
 
   icons: {

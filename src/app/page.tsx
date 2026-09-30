@@ -2,6 +2,7 @@ import { promises as fs } from "fs";
 import path from "path";
 import { Hero } from "@/components/hero";
 import { About } from "@/components/about";
+import { Approach } from "@/components/approach";
 import { Projects } from "@/components/projects";
 import { Gallery } from "@/components/gallery";
 import { Skills } from "@/components/skills";
@@ -132,6 +133,7 @@ export default async function Home() {
       <Hero data={data.hero} />
       <About text={data.about} />
       <Projects data={data.projects} />
+      {data.approach && <Approach data={data.approach} />}
       {galleryImages.length > 0 && <Gallery images={galleryImages} />}
       <Skills data={data.skills} />
       <Parcours data={data.parcours} />

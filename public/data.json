@@ -1,8 +1,8 @@
 {
   "hero": {
     "name": "Norman Vonizara",
-    "title": "Développeur Full-Stack & Réseaux | Télécommunications, IA & DevOps",
-    "tagline": "Je conçois des applications complètes, de l'infrastructure réseau à l'interface, avec une touche d'IA.",
+    "title": "Ingénierie logicielle & Réseaux | Télécommunications, IA & DevOps",
+    "tagline": "Conception de solutions digitales robustes, pensées comme un ingénieur, de l'infrastructure à l'expérience utilisateur.",
     "location": "Antsiranana, Madagascar",
     "resumeUrl": "/curriculum_vitae_normaXCat.pdf",
     "links": {
@@ -11,7 +11,7 @@
       "email": "normanvonizara@gmail.com"
     }
   },
-  "about": "Développeur Full-Stack avec une base en Télécoms et Réseaux, à l'aise de l'infrastructure à l'interface, avec une appétence pour l'IA (vision par ordinateur) et le DevOps. Actuellement en Master 1 STIC, parcours Télécommunications et Réseaux, à l'ESP Antsiranana.",
+  "about": "Conception de produits digitaux de bout en bout, de l'infrastructure réseau jusqu'à l'interface utilisateur, avec une appétence pour l'IA (vision par ordinateur) et le DevOps. Actuellement en Master 1 STIC (Télécommunications et Réseaux) à l'ESP Antsiranana.",
   "projects": [
     {
       "name": "CoFound.mg",
@@ -24,14 +24,14 @@
       "name": "SalonAtlas",
       "url": "https://salon-atlas.mada-digital.xyz/",
       "context": "Stage Mada Digital · 12/2025 – 07/2026",
-      "description": "Annuaire des salons de coiffure en Suisse, développé et déployé lors de mon stage chez Mada Digital.",
+      "description": "Annuaire des salons de coiffure en Suisse, développé et déployé lors d'un stage chez Mada Digital.",
       "stack": ["React", "Vite", "TypeScript", "Tailwind CSS", "Laravel", "PostgreSQL"]
     },
     {
       "name": "Hotel Victoria GPlus",
       "url": "https://dev-victoria.webapp-gplus.com/",
       "context": "Stage Mada Digital · 12/2025 – 07/2026",
-      "description": "Conception des maquettes Figma d'une plateforme hôtelière, réalisée lors de mon stage chez Mada Digital.",
+      "description": "Conception des maquettes Figma d'une plateforme hôtelière, réalisée lors d'un stage chez Mada Digital.",
       "stack": ["Figma"]
     },
     {
@@ -57,6 +57,27 @@
       "stack": ["Next.js", "TypeScript", "Tailwind CSS", "Express", "Prisma", "PostgreSQL"]
     }
   ],
+  "approach": {
+    "label": "Façon de travailler",
+    "headline": "Résoudre, concevoir, construire.",
+    "pillars": [
+      {
+        "number": "01",
+        "title": "Résolution de problèmes",
+        "description": "Avant de coder, analyse approfondie du vrai problème à résoudre, au-delà de la simple fonctionnalité demandée."
+      },
+      {
+        "number": "02",
+        "title": "De l'idée à la solution",
+        "description": "Transformation d'une idée, même émergente, en un produit digital concret, testé et déployé."
+      },
+      {
+        "number": "03",
+        "title": "Rigueur d'ingénieur",
+        "description": "Une solide base en réseaux et télécommunications au service de systèmes fiables, structurés et pensés pour durer."
+      }
+    ]
+  },
   "skills": {
     "Front-End": ["React", "Next.js", "React Native (Expo)", "TypeScript", "Tailwind CSS"],
     "Back-End": ["Node.js", "Express", "NestJS", "Laravel", "PHP", "Python"],
