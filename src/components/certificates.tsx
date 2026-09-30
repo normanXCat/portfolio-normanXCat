@@ -15,12 +15,15 @@ export type CertificateItem = {
   code?: string | null;
   description?: string | null;
   verificationUrl?: string | null;
+  width?: number;
+  height?: number;
 };
 
 /**
  * Carte de certificat unitaire avec effet de bascule 3D (tilt) au survol,
  * liseré décoratif intérieur façon diplôme, badge de sceau d'attestation,
  * reflet lumineux (glare) subtil et panneau d'informations en surimpression floutée.
+ * La hauteur dépend directement du ratio réel du document PDF (portrait ou paysage).
  */
 function CertificateCard({
   cert,
@@ -36,6 +39,10 @@ function CertificateCard({
   const [isHovered, setIsHovered] = useState(false);
   const [isOpenMobile, setIsOpenMobile] = useState(false);
   const shouldReduceMotion = useReducedMotion();
+
+  const width = cert.width || 1241;
+  const height = cert.height || 1754;
+  const isLandscape = width > height;
 
   const handleMouseMove = useCallback(
     (e: React.MouseEvent<HTMLDivElement>) => {
@@ -85,10 +92,10 @@ function CertificateCard({
   const isOverlayActive = isHovered || isOpenMobile;
 
   return (
-    <FadeIn delay={index * 0.08} className="h-full">
+    <FadeIn delay={index * 0.08} className="w-full">
       <div
         style={{ perspective: 1000 }}
-        className="w-full h-full"
+        className="w-full"
       >
         <div
           ref={cardRef}
@@ -101,6 +108,7 @@ function CertificateCard({
           onClick={handleToggleMobile}
           onKeyDown={handleKeyDown}
           style={{
+            aspectRatio: `${width} / ${height}`,
             transform:
               shouldReduceMotion || !isHovered
                 ? "rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)"
@@ -110,7 +118,7 @@ function CertificateCard({
               ? "transform 0.12s ease-out, box-shadow 0.25s ease"
               : "transform 0.4s ease-out, box-shadow 0.3s ease",
           }}
-          className="relative w-full aspect-[4/3] sm:aspect-[1/1.25] rounded-xl overflow-hidden bg-card-bg/75 border border-border/80 shadow-md shadow-foreground/[0.03] dark:shadow-black/25 hover:shadow-2xl hover:shadow-accent/15 dark:hover:shadow-black/50 hover:border-accent/50 cursor-pointer focus-visible:outline-2 focus-visible:outline-accent select-none group"
+          className="relative w-full rounded-xl overflow-hidden bg-card-bg/75 border border-border/80 shadow-md shadow-foreground/[0.03] dark:shadow-black/25 hover:shadow-2xl hover:shadow-accent/15 dark:hover:shadow-black/50 hover:border-accent/50 cursor-pointer focus-visible:outline-2 focus-visible:outline-accent select-none group"
         >
           {/* Badge de sceau permanent dans le coin supérieur */}
           <div
@@ -164,7 +172,9 @@ function CertificateCard({
               transition:
                 "opacity 0.25s ease, transform 0.3s cubic-bezier(0.16, 1, 0.3, 1)",
             }}
-            className={`absolute inset-0 p-5 sm:p-6 flex flex-col justify-between bg-background/92 dark:bg-card-bg/94 backdrop-blur-md border border-border/70 rounded-xl z-20 transition-opacity duration-250 ${
+            className={`absolute inset-0 ${
+              isLandscape ? "p-3.5 sm:p-4" : "p-5 sm:p-6"
+            } flex flex-col justify-between bg-background/92 dark:bg-card-bg/94 backdrop-blur-md border border-border/70 rounded-xl z-20 transition-opacity duration-250 overflow-y-auto ${
               isOverlayActive
                 ? "opacity-100 pointer-events-auto"
                 : "opacity-0 pointer-events-none"
@@ -172,7 +182,11 @@ function CertificateCard({
           >
             {/* Haut du panneau : Titre, Organisme, Date, Code, Description */}
             <div>
-              <h3 className="font-serif text-lg sm:text-xl font-semibold text-foreground leading-snug">
+              <h3
+                className={`font-serif ${
+                  isLandscape ? "text-base sm:text-lg" : "text-lg sm:text-xl"
+                } font-semibold text-foreground leading-snug`}
+              >
                 {cert.title}
               </h3>
 
@@ -193,7 +207,11 @@ function CertificateCard({
               </div>
 
               {cert.description && (
-                <p className="text-xs text-foreground/80 mt-2.5 leading-relaxed line-clamp-4">
+                <p
+                  className={`text-xs text-foreground/80 ${
+                    isLandscape ? "mt-1.5 line-clamp-2" : "mt-2.5 line-clamp-4"
+                  } leading-relaxed`}
+                >
                   {cert.description}
                 </p>
               )}
@@ -201,7 +219,9 @@ function CertificateCard({
 
             {/* Bas du panneau : Actions (Ouvrir PDF / Vérifier) */}
             <div
-              className="pt-3 border-t border-border/50 flex flex-wrap items-center justify-between gap-2 mt-auto"
+              className={`${
+                isLandscape ? "pt-2" : "pt-3"
+              } border-t border-border/50 flex flex-wrap items-center justify-between gap-2 mt-auto`}
               onClick={(e) => e.stopPropagation()}
             >
               {/* Bouton pour ouvrir le PDF original */}
@@ -237,7 +257,7 @@ function CertificateCard({
 
 /**
  * Section Certifications & Attestations — grille en 3 colonnes desktop,
- * vignettes 3D décorées avec liseré intérieur, sceau permanent et survol interactif.
+ * vignettes 3D décorées avec hauteur dynamique calquée sur le ratio réel du PDF.
  */
 export function Certificates({ data }: { data: CertificateItem[] }) {
   if (!data || data.length === 0) return null;
@@ -251,8 +271,8 @@ export function Certificates({ data }: { data: CertificateItem[] }) {
         Certifications
       </h2>
 
-      {/* Grille 3 colonnes sur desktop (>= 1024px), 2 sur tablette, 1 sur mobile */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+      {/* Grille 3 colonnes sur desktop (>= 1024px), 2 sur tablette, 1 sur mobile avec alignement au sommet */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 items-start">
         {data.map((cert, index) => (
           <CertificateCard
             key={cert.pdfUrl}

@@ -106,6 +106,8 @@ async function getCertificates(): Promise<CertificateItem[]> {
         code: fileMeta.code ?? null,
         description: fileMeta.description ?? null,
         verificationUrl: fileMeta.verificationUrl ?? null,
+        width: typeof fileMeta.width === "number" ? fileMeta.width : 1241,
+        height: typeof fileMeta.height === "number" ? fileMeta.height : 1754,
       };
     });
   } catch {
