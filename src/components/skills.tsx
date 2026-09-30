@@ -177,12 +177,44 @@ function getCategoryIcon(category: string): ReactNode {
 }
 
 /**
- * Section Compétences — grille responsive 3 colonnes de blocs sobres par catégorie,
- * chaque compétence présentée en pastille stylée avec son icône de marque
- * monochrome réactive au survol.
+ * Calcule dynamiquement les classes de span bento pour une catégorie
+ * en fonction de son volume de technologies par rapport aux autres catégories.
+ * Grille modulaire de base : 6 colonnes sur desktop (>= 1024px), 2 sur tablette, 1 sur mobile.
+ */
+function getSkillBentoSpan(
+  itemCount: number,
+  allCounts: number[],
+  categoryIndex: number
+): string {
+  // Classe les indices par volume décroissant pour attribuer des spans harmonieux
+  const sortedIndices = allCounts
+    .map((count, idx) => ({ count, idx }))
+    .sort((a, b) => b.count - a.count || a.idx - b.idx)
+    .map((item) => item.idx);
+
+  const rank = sortedIndices.indexOf(categoryIndex);
+
+  // Les 2 catégories les plus fournies : 4 colonnes sur desktop (2/3 de rangée), pleine rangée sur tablette
+  if (rank < 2) {
+    return "col-span-1 md:col-span-2 lg:col-span-4";
+  }
+
+  // Les 2 catégories les plus compactes : 2 colonnes sur desktop (1/3 de rangée), 1 colonne sur tablette
+  if (rank >= allCounts.length - 2) {
+    return "col-span-1 md:col-span-1 lg:col-span-2";
+  }
+
+  // Catégories intermédiaires : 3 colonnes sur desktop (1/2 rangée), 1 colonne sur tablette
+  return "col-span-1 md:col-span-1 lg:col-span-3";
+}
+
+/**
+ * Section Compétences — mosaïque Bento Grid dense (sans espace vide),
+ * chaque bloc occupant 2, 3 ou 4 unités d'une grille de 6 colonnes selon son volume de technologies.
  */
 export function Skills({ data }: { data: Record<string, string[]> }) {
   const categories = Object.entries(data);
+  const allCounts = categories.map(([, items]) => items.length);
 
   return (
     <section
@@ -195,43 +227,47 @@ export function Skills({ data }: { data: Record<string, string[]> }) {
         </h2>
       </FadeIn>
 
-      {/* Grille 3 colonnes sur desktop (>= 1024px), 2 sur tablette, 1 sur mobile */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-        {categories.map(([category, items], catIndex) => (
-          <FadeIn
-            key={category}
-            delay={catIndex * 0.05}
-            className="h-full"
-          >
-            <div className="h-full flex flex-col p-5 sm:p-6 rounded-xl border border-border/75 bg-card-bg/40 hover:border-border hover:bg-card-bg/60 transition-colors shadow-xs">
-              {/* Titre de catégorie avec icône */}
-              <div className="flex items-center gap-2 text-foreground font-medium text-sm mb-4 pb-2.5 border-b border-border/50">
-                {getCategoryIcon(category)}
-                <span>{category}</span>
-              </div>
+      {/* Mosaïque Bento Grid : 6 unités desktop, 2 unités tablette, 1 colonne mobile avec flux dense */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-6 md:gap-8 [grid-auto-flow:dense]">
+        {categories.map(([category, items], catIndex) => {
+          const spanClass = getSkillBentoSpan(items.length, allCounts, catIndex);
 
-              {/* Pastilles de technologies */}
-              <div className="flex flex-wrap gap-2">
-                {items.map((tech) => {
-                  const icon = getTechIcon(tech);
-                  return (
-                    <span
-                      key={tech}
-                      className="group inline-flex items-center gap-1.5 px-3 py-1 text-xs rounded-lg border border-border bg-card-bg/70 text-foreground/85 hover:text-accent hover:border-accent/40 hover:bg-card-bg transition-colors cursor-default"
-                    >
-                      {icon && (
-                        <span className="text-muted group-hover:text-accent transition-colors flex items-center">
-                          {icon}
-                        </span>
-                      )}
-                      <span className="font-medium tracking-tight">{tech}</span>
-                    </span>
-                  );
-                })}
+          return (
+            <FadeIn
+              key={category}
+              delay={catIndex * 0.05}
+              className={`h-full ${spanClass}`}
+            >
+              <div className="h-full flex flex-col justify-start p-5 sm:p-6 rounded-xl border border-border/75 bg-card-bg/40 hover:border-border hover:bg-card-bg/60 transition-colors shadow-xs">
+                {/* Titre de catégorie avec icône */}
+                <div className="flex items-center gap-2 text-foreground font-medium text-sm mb-4 pb-2.5 border-b border-border/50">
+                  {getCategoryIcon(category)}
+                  <span>{category}</span>
+                </div>
+
+                {/* Pastilles de technologies */}
+                <div className="flex flex-wrap gap-2">
+                  {items.map((tech) => {
+                    const icon = getTechIcon(tech);
+                    return (
+                      <span
+                        key={tech}
+                        className="group inline-flex items-center gap-1.5 px-3 py-1 text-xs rounded-lg border border-border bg-card-bg/70 text-foreground/85 hover:text-accent hover:border-accent/40 hover:bg-card-bg transition-colors cursor-default"
+                      >
+                        {icon && (
+                          <span className="text-muted group-hover:text-accent transition-colors flex items-center">
+                            {icon}
+                          </span>
+                        )}
+                        <span className="font-medium tracking-tight">{tech}</span>
+                      </span>
+                    );
+                  })}
+                </div>
               </div>
-            </div>
-          </FadeIn>
-        ))}
+            </FadeIn>
+          );
+        })}
       </div>
     </section>
   );
