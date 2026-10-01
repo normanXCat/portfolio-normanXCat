@@ -15,7 +15,7 @@ import { Contact } from "@/components/contact";
  * des formats d'image courants (JPEG, PNG, GIF, WebP) sans dépendance externe.
  */
 function getImageDimensions(buffer: Buffer): { width: number; height: number } | null {
-  // PNG : signature 89 50 4E 47 0D 0A 1A 0A, IHDR width à l'octet 16, height à 20
+  // PNG : signature 89 50 4E 47 0D 0A 1A 0A
   if (
     buffer.length >= 24 &&
     buffer[0] === 0x89 &&
@@ -26,7 +26,7 @@ function getImageDimensions(buffer: Buffer): { width: number; height: number } |
     return { width: buffer.readUInt32BE(16), height: buffer.readUInt32BE(20) };
   }
 
-  // GIF : GIF87a ou GIF89a, width à 6, height à 8
+  // GIF : GIF87a ou GIF89a
   if (
     buffer.length >= 10 &&
     (buffer.toString("ascii", 0, 6) === "GIF87a" || buffer.toString("ascii", 0, 6) === "GIF89a")
@@ -34,7 +34,7 @@ function getImageDimensions(buffer: Buffer): { width: number; height: number } |
     return { width: buffer.readUInt16LE(6), height: buffer.readUInt16LE(8) };
   }
 
-  // WebP : RIFF .... WEBP
+  // WebP
   if (
     buffer.length >= 30 &&
     buffer.toString("ascii", 0, 4) === "RIFF" &&
@@ -72,7 +72,6 @@ function getImageDimensions(buffer: Buffer): { width: number; height: number } |
         continue;
       }
       const marker = buffer[offset + 1];
-      // Marqueurs SOF (SOF0 à SOF3, SOF5 à SOF7, SOF9 à SOF11, SOF13 à SOF15)
       if (
         (marker >= 0xc0 && marker <= 0xc3) ||
         (marker >= 0xc5 && marker <= 0xc7) ||
@@ -83,7 +82,6 @@ function getImageDimensions(buffer: Buffer): { width: number; height: number } |
         const width = buffer.readUInt16BE(offset + 7);
         return { width, height };
       }
-      // Sauter le segment de longueur variable
       const length = buffer.readUInt16BE(offset + 2);
       offset += 2 + length;
     }
@@ -93,9 +91,22 @@ function getImageDimensions(buffer: Buffer): { width: number; height: number } |
 }
 
 /**
+ * Hash déterministe pour mélanger harmonieusement les images
+ * de manière stable d'un build à l'autre.
+ */
+function hashDeterministic(str: string): number {
+  let h = 2166136261;
+  for (let i = 0; i < str.length; i++) {
+    h ^= str.charCodeAt(i);
+    h = Math.imul(h, 16777619);
+  }
+  return h >>> 0;
+}
+
+/**
  * Lit dynamiquement les images du dossier public/gallery/ au build.
- * Filtre les extensions valides, trie par ordre alphabétique,
- * extrait leurs dimensions et associe les légendes de captions.json si présent.
+ * Filtre les extensions valides, applique un ordonnancement naturel déterministe,
+ * extrait les dimensions exactes et associe les légendes de captions.json.
  */
 async function getGalleryImages(): Promise<GalleryImage[]> {
   const galleryDir = path.join(process.cwd(), "public", "gallery");
@@ -108,17 +119,36 @@ async function getGalleryImages(): Promise<GalleryImage[]> {
 
     if (imageFiles.length === 0) return [];
 
-    let captions: Record<string, string> = {};
+    type RawMetaEntry =
+      | string
+      | {
+          caption?: string;
+          order?: number;
+        };
+
+    let metaMap: Record<string, RawMetaEntry> = {};
     const captionsFile = path.join(galleryDir, "captions.json");
     try {
       const captionsContent = await fs.readFile(captionsFile, "utf8");
-      captions = JSON.parse(captionsContent);
+      metaMap = JSON.parse(captionsContent);
     } catch {
       // captions.json optionnel
     }
 
+    // Mélange déterministe ou tri selon l'ordre personnalisé
+    const sortedFiles = [...imageFiles].sort((a, b) => {
+      const entryA = metaMap[a];
+      const entryB = metaMap[b];
+      const orderA = typeof entryA === "object" && entryA?.order !== undefined ? entryA.order : null;
+      const orderB = typeof entryB === "object" && entryB?.order !== undefined ? entryB.order : null;
+      if (orderA !== null && orderB !== null) return orderA - orderB;
+      if (orderA !== null) return -1;
+      if (orderB !== null) return 1;
+      return hashDeterministic(a) - hashDeterministic(b);
+    });
+
     return Promise.all(
-      imageFiles.map(async (file) => {
+      sortedFiles.map(async (file) => {
         const nameWithoutExt = path.parse(file).name.replace(/[-_]/g, " ");
         let width = 1200;
         let height = 800;
@@ -134,12 +164,17 @@ async function getGalleryImages(): Promise<GalleryImage[]> {
           // fallback par défaut
         }
 
+        const entry = metaMap[file];
+        const caption = typeof entry === "string" ? entry : entry?.caption;
+        const order = typeof entry === "object" ? entry?.order : undefined;
+
         return {
           src: `/gallery/${file}`,
-          alt: captions[file] || nameWithoutExt,
-          caption: captions[file],
+          alt: caption || nameWithoutExt,
+          caption,
           width,
           height,
+          order,
         };
       })
     );

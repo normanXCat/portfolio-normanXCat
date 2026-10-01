@@ -8,55 +8,15 @@ export type GalleryImage = {
   src: string;
   alt: string;
   caption?: string;
-  width?: number;
-  height?: number;
+  width: number;
+  height: number;
+  order?: number;
 };
 
 /**
- * Calcule dynamiquement les spans Bento Grid selon le ratio réel de chaque image.
- * - Format Portrait (ratio < 0.85) : 1 colonne x 2 rangées (hauteur doublée).
- * - Première image Paysage (vedette) : 2 colonnes x 2 rangées sur desktop, 2x1 sur mobile.
- * - Autres images Paysage : 2 colonnes x 1 rangée.
- * - Carré ou standard : 1x1.
- */
-function getGalleryBentoSpan(
-  img: GalleryImage,
-  index: number,
-  allImages: GalleryImage[]
-): string {
-  const width = img.width || 1200;
-  const height = img.height || 800;
-  const ratio = width / height;
-
-  // Portrait (ex: photo verticale) -> 1 col, 2 rangées
-  if (ratio < 0.85) {
-    return "col-span-1 row-span-2";
-  }
-
-  // Première image paysage : mise en valeur majeure (2x2 sur desktop)
-  const firstLandscapeIndex = allImages.findIndex((item) => {
-    const w = item.width || 1200;
-    const h = item.height || 800;
-    return w / h >= 1.2;
-  });
-
-  if (index === firstLandscapeIndex) {
-    return "col-span-2 row-span-1 md:col-span-2 md:row-span-2";
-  }
-
-  // Autres images paysage -> 2 colonnes x 1 rangée
-  if (ratio > 1.2) {
-    return "col-span-2 row-span-1 md:col-span-2 md:row-span-1";
-  }
-
-  // Carré ou standard
-  return "col-span-1 row-span-1";
-}
-
-/**
- * Section Galerie — mosaïque Bento Grid dense (sans espace vide)
- * avec spans adaptatifs calculés au build selon les dimensions réelles,
- * et lightbox accessible plein écran au clic.
+ * Section Galerie — agencement Masonry naturel (façon Pinterest) avec CSS columns.
+ * Chaque image conserve ses dimensions et son ratio natifs (aucun recadrage, aucune tête coupée).
+ * Lightbox accessible plein écran au clic.
  */
 export function Gallery({ images }: { images: GalleryImage[] }) {
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
@@ -121,47 +81,45 @@ export function Gallery({ images }: { images: GalleryImage[] }) {
         </h2>
       </FadeIn>
 
-      {/* Mosaïque Bento Grid dense : 4 colonnes desktop, 2 colonnes mobile */}
-      <div className="grid grid-cols-2 md:grid-cols-4 auto-rows-[160px] sm:auto-rows-[190px] md:auto-rows-[220px] gap-4 sm:gap-5 md:gap-6 [grid-auto-flow:dense]">
-        {images.map((img, index) => {
-          const spanClass = getGalleryBentoSpan(img, index, images);
-
-          return (
-            <FadeIn
-              key={img.src}
-              delay={index * 0.05}
-              className={`h-full ${spanClass}`}
-            >
+      {/* Masonry naturel via CSS columns : 4 cols desktop, 3 tablette, 2 mobile */}
+      <div className="columns-2 md:columns-3 lg:columns-4 gap-4 sm:gap-5 md:gap-6">
+        {images.map((img, index) => (
+          <div
+            key={img.src}
+            className="break-inside-avoid mb-4 sm:mb-5 md:mb-6"
+          >
+            <FadeIn delay={index * 0.04}>
               <button
                 type="button"
                 onClick={() => open(index)}
-                className="group relative w-full h-full rounded-xl overflow-hidden bg-card-bg/40 border border-border/75 hover:border-accent/50 transition-all duration-300 shadow-xs cursor-pointer focus-visible:ring-2 focus-visible:ring-accent block"
+                className="group relative w-full rounded-xl overflow-hidden bg-card-bg/40 border border-border/70 hover:border-accent/40 shadow-xs hover:shadow-md transition-all duration-300 cursor-pointer focus-visible:ring-2 focus-visible:ring-accent block"
                 aria-label={`Agrandir : ${img.alt}`}
               >
                 <Image
                   src={img.src}
                   alt={img.alt}
-                  fill
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  loading="lazy"
-                  className="object-cover group-hover:scale-[1.03] transition-transform duration-500 ease-out"
+                  width={img.width}
+                  height={img.height}
+                  sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                  loading={index < 4 ? "eager" : "lazy"}
+                  className="w-full h-auto object-contain block group-hover:scale-105 transition-transform duration-500 ease-out"
                 />
 
                 {/* Voile d'ombrage au survol et légende éventuelle */}
                 <div
-                  className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none flex items-end p-3 sm:p-4"
+                  className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none flex items-end p-3 sm:p-4"
                   aria-hidden="true"
                 >
                   {img.caption && (
-                    <p className="text-white text-xs font-medium truncate drop-shadow-xs">
+                    <p className="text-white text-xs font-medium line-clamp-2 drop-shadow-xs text-left">
                       {img.caption}
                     </p>
                   )}
                 </div>
               </button>
             </FadeIn>
-          );
-        })}
+          </div>
+        ))}
       </div>
 
       {/* Lightbox accessible plein écran */}
