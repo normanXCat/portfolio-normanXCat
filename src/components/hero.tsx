@@ -45,7 +45,7 @@ export function Hero({ data }: { data: HeroData }) {
             <div className="relative w-[140px] h-[140px] md:w-[200px] md:h-[200px] rounded-full p-1 border-2 border-accent/40 bg-card-bg/60 shadow-xs">
               <div className="relative w-full h-full rounded-full overflow-hidden">
                 <Image
-                  src="/profil.norman.png"
+                  src="/profil.norman.jpeg"
                   alt={`Photo de profil de ${data.name}`}
                   fill
                   className="object-cover object-[center_15%]"
