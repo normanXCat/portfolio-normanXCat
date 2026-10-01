@@ -4,22 +4,98 @@ import { Hero } from "@/components/hero";
 import { About } from "@/components/about";
 import { Approach } from "@/components/approach";
 import { Projects } from "@/components/projects";
-import { Gallery } from "@/components/gallery";
+import { Gallery, type GalleryImage } from "@/components/gallery";
 import { Skills } from "@/components/skills";
 import { Parcours } from "@/components/parcours";
 import { Certificates, type CertificateItem } from "@/components/certificates";
 import { Contact } from "@/components/contact";
 
-type GalleryImage = {
-  src: string;
-  alt: string;
-  caption?: string;
-};
+/**
+ * Extrait les dimensions réelles (width, height) depuis les en-têtes binaires
+ * des formats d'image courants (JPEG, PNG, GIF, WebP) sans dépendance externe.
+ */
+function getImageDimensions(buffer: Buffer): { width: number; height: number } | null {
+  // PNG : signature 89 50 4E 47 0D 0A 1A 0A, IHDR width à l'octet 16, height à 20
+  if (
+    buffer.length >= 24 &&
+    buffer[0] === 0x89 &&
+    buffer[1] === 0x50 &&
+    buffer[2] === 0x4e &&
+    buffer[3] === 0x47
+  ) {
+    return { width: buffer.readUInt32BE(16), height: buffer.readUInt32BE(20) };
+  }
+
+  // GIF : GIF87a ou GIF89a, width à 6, height à 8
+  if (
+    buffer.length >= 10 &&
+    (buffer.toString("ascii", 0, 6) === "GIF87a" || buffer.toString("ascii", 0, 6) === "GIF89a")
+  ) {
+    return { width: buffer.readUInt16LE(6), height: buffer.readUInt16LE(8) };
+  }
+
+  // WebP : RIFF .... WEBP
+  if (
+    buffer.length >= 30 &&
+    buffer.toString("ascii", 0, 4) === "RIFF" &&
+    buffer.toString("ascii", 8, 12) === "WEBP"
+  ) {
+    const chunkType = buffer.toString("ascii", 12, 16);
+    if (chunkType === "VP8 ") {
+      return {
+        width: buffer.readUInt16LE(26) & 0x3fff,
+        height: buffer.readUInt16LE(28) & 0x3fff,
+      };
+    }
+    if (chunkType === "VP8L") {
+      const b0 = buffer[21];
+      const b1 = buffer[22];
+      const b2 = buffer[23];
+      const b3 = buffer[24];
+      const width = 1 + (((b1 & 0x3f) << 8) | b0);
+      const height = 1 + (((b3 & 0xf) << 10) | (b2 << 2) | ((b1 & 0xc0) >> 6));
+      return { width, height };
+    }
+    if (chunkType === "VP8X") {
+      const width = 1 + buffer.readUIntLE(24, 3);
+      const height = 1 + buffer.readUIntLE(27, 3);
+      return { width, height };
+    }
+  }
+
+  // JPEG : marqueur de début FF D8
+  if (buffer.length >= 4 && buffer[0] === 0xff && buffer[1] === 0xd8) {
+    let offset = 2;
+    while (offset < buffer.length - 8) {
+      if (buffer[offset] !== 0xff) {
+        offset++;
+        continue;
+      }
+      const marker = buffer[offset + 1];
+      // Marqueurs SOF (SOF0 à SOF3, SOF5 à SOF7, SOF9 à SOF11, SOF13 à SOF15)
+      if (
+        (marker >= 0xc0 && marker <= 0xc3) ||
+        (marker >= 0xc5 && marker <= 0xc7) ||
+        (marker >= 0xc9 && marker <= 0xcb) ||
+        (marker >= 0xcd && marker <= 0xcf)
+      ) {
+        const height = buffer.readUInt16BE(offset + 5);
+        const width = buffer.readUInt16BE(offset + 7);
+        return { width, height };
+      }
+      // Sauter le segment de longueur variable
+      const length = buffer.readUInt16BE(offset + 2);
+      offset += 2 + length;
+    }
+  }
+
+  return null;
+}
 
 /**
  * Lit dynamiquement les images du dossier public/gallery/ au build.
  * Filtre les extensions valides, trie par ordre alphabétique,
- * et associe les légendes de captions.json si présent.
+ * extrait leurs dimensions et associe les légendes de captions.json si présent.
  */
 async function getGalleryImages(): Promise<GalleryImage[]> {
   const galleryDir = path.join(process.cwd(), "public", "gallery");
@@ -41,14 +117,32 @@ async function getGalleryImages(): Promise<GalleryImage[]> {
       // captions.json optionnel
     }
 
-    return imageFiles.map((file) => {
-      const nameWithoutExt = path.parse(file).name.replace(/[-_]/g, " ");
-      return {
-        src: `/gallery/${file}`,
-        alt: captions[file] || nameWithoutExt,
-        caption: captions[file],
-      };
-    });
+    return Promise.all(
+      imageFiles.map(async (file) => {
+        const nameWithoutExt = path.parse(file).name.replace(/[-_]/g, " ");
+        let width = 1200;
+        let height = 800;
+        try {
+          const filePath = path.join(galleryDir, file);
+          const buf = await fs.readFile(filePath);
+          const dims = getImageDimensions(buf);
+          if (dims && dims.width > 0 && dims.height > 0) {
+            width = dims.width;
+            height = dims.height;
+          }
+        } catch {
+          // fallback par défaut
+        }
+
+        return {
+          src: `/gallery/${file}`,
+          alt: captions[file] || nameWithoutExt,
+          caption: captions[file],
+          width,
+          height,
+        };
+      })
+    );
   } catch {
     return [];
   }
