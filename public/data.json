@@ -14,6 +14,13 @@
   "about": "Conception de produits digitaux de bout en bout, de l'infrastructure réseau jusqu'à l'interface utilisateur, avec une appétence pour l'IA (vision par ordinateur) et le DevOps. Actuellement en Master 1 STIC (Télécommunications et Réseaux) à l'ESP Antsiranana.",
   "projects": [
     {
+      "name": "Verso",
+      "url": "https://verso-lyrics.vercel.app/",
+      "context": "Projet personnel",
+      "description": "Atelier d'écriture pour auteurs de rap : cahier de travail moderne avec décompte métrique en direct et horodatage certifié des textes.",
+      "stack": ["React", "TypeScript", "Tailwind CSS", "Fastify", "Prisma", "PostgreSQL"]
+    },
+    {
       "name": "CoFound.mg",
       "url": "https://co-found-mg.vercel.app/",
       "context": "Programme ITOVIA 2026 · 08/2026 – 09/2026",
